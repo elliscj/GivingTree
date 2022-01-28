@@ -2,8 +2,7 @@
 import axios from "axios";
 
 const search = (query) =>
-  axios.get(
-    `http://data.orghunter.com/v1/charitysearch?user_key=5e83606dc29f8eac5538826640e5758b${query}`
-  );
+  axios.get(`http://data.orghunter.com/v1/charitysearch?user_key=5e83606dc29f8eac5538826640e5758b&eligible=1
+`);
 
-export default { search };
+export default search;
