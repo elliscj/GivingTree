@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { HashRouter, Route, Switch } from "react-router-dom";
 import Landing from "./components/Landing";
-import Roots from "./components/Roots/Roots";
+import Roots from "./components/Roots-Dashboard/Roots";
 
 import NavBar from "./components/NavBar";
 // import Questions from "./components/questions";
@@ -10,7 +10,6 @@ import NavBar from "./components/NavBar";
 const App = () => {
   return (
     <HashRouter>
-      <Roots />
       <div>
         <Switch>
           <Route exact path="/" component={Landing} />
