@@ -7,15 +7,17 @@ const typeDefs = gql`
     email: String!
     password: String!
     favorites: [Favorite]
+    donations: [Donation]
   }
 
   type Favorite {
-    _id: ID
     charity_name: String!
   }
 
   type Donation {
     _id: ID
+    username: String!
+    charity_name: String!
     amount: Int!
     createdAt: String
   }
