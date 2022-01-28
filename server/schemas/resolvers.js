@@ -72,14 +72,10 @@ const resolvers = {
       throw new AuthenticationError(`Our branches must be crossed!
       You must be logged in to add a favorite charity!`);
     },
-    addDonation: async (
-      parent,
-      { username, charity_name, amount },
-      context
-    ) => {
+    addDonation: async (parent, { charity_name, amount }, context) => {
       if (context.user) {
         const donation = await Donation.create({
-          username,
+          username: context.user.username,
           charity_name,
           amount,
         });
