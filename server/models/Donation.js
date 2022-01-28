@@ -11,7 +11,7 @@ const donationSchema = new Schema({
     required: true,
   },
   amount: {
-    type: INT,
+    type: Number,
     required: true,
   },
   createdAt: {
