@@ -1,5 +1,5 @@
-import { Schema, model } from "mongoose";
-import dateFormat from "../utils/dateFormat";
+const { Schema, model } = require("mongoose");
+const dateFormat = require("../utils/dateFormat");
 
 const donationSchema = new Schema({
   username: {
@@ -23,4 +23,4 @@ const donationSchema = new Schema({
 
 const Donation = model("Donation", donationSchema);
 
-export default Donation;
+module.exports = Donation;

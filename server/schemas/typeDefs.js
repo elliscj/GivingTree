@@ -1,4 +1,4 @@
-import { gql } from "apollo-server-express";
+const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
   type User {
@@ -48,4 +48,4 @@ const typeDefs = gql`
 // comment functionality for users between users?
 // can make donations own model if queries are difficult
 
-export default typeDefs;
+module.exports = typeDefs;
