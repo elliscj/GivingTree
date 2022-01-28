@@ -9,14 +9,15 @@ import NavBar from "./components/NavBar";
 
 const App = () => {
   return (
-    <HashRouter>
-      <div>
-        <Switch>
-          <Route exact path="/" component={Landing} />
-          <Route exact path="/components/NavBar" component={NavBar} />
-        </Switch>
-      </div>
-    </HashRouter>
+    <Roots />
+    // <HashRouter>
+    //   <div>
+    //     <Switch>
+    //       <Route exact path="/" component={Landing} />
+    //       <Route exact path="/components/NavBar" component={NavBar} />
+    //     </Switch>
+    //   </div>
+    // </HashRouter>
   );
 };
 
