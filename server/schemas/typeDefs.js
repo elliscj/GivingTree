@@ -6,6 +6,18 @@ const typeDefs = gql`
     username: String!
     email: String!
     password: String!
+    favorites: [Favorite]
+  }
+
+  type Favorite {
+    _id: ID
+    charity_name: String!
+  }
+
+  type Donation {
+    _id: ID
+    amount: Int!
+    createdAt: String
   }
 
   type Auth {
@@ -16,12 +28,22 @@ const typeDefs = gql`
   type Query {
     users: [User]
     user(username: String!): User
+    donations: [Donation]
+    donations(username: String!): [Donation]
+    donation(_id: ID!): Donation
+    favorites(username: String!): [Favorites]
   }
 
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
+    addFavorite(charity_name: String!): Favorite
+    removeFavorite(favoriteId: ID!): Favorite
+    addDonation(favoriteId: ID!, amount: Int): Favorite
   }
 `;
+
+// comment functionality for users between users?
+// can make donations own model if queries are difficult
 
 export default typeDefs;
