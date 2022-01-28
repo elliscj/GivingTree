@@ -1,4 +1,4 @@
-import User from "./User";
-import Donation from "./Donation";
+const User = require("./User");
+const Donation = require("./Donation");
 
-export default { User, Donation };
+module.exports = { User, Donation };
