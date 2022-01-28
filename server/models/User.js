@@ -24,8 +24,17 @@ const userSchema = new Schema({
   },
   favorites: [
     {
+      charity_name: {
+        type: String,
+        required: true,
+        unique: true,
+      },
+    },
+  ],
+  donations: [
+    {
       type: Schema.Types.ObjectId,
-      ref: "Favorite",
+      ref: "Donation",
     },
   ],
 });
