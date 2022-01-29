@@ -75,7 +75,7 @@ function preventDefault(event) {
 export default function Donations() {
   return (
     <>
-      <Title>Recent Orders</Title>
+      <Title>Recent Donations</Title>
       <Table size="small">
         <TableHead>
           <TableRow>
@@ -102,7 +102,7 @@ export default function Donations() {
         </TableBody>
       </Table>
       <Link color="primary" href="#" onClick={preventDefault} sx={{ mt: 3 }}>
-        See more orders
+        See more Donations
       </Link>
     </>
   );
