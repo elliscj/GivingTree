@@ -1,5 +1,5 @@
-import { Schema, model } from "mongoose";
-import bcrypt from "bcrypt";
+const { Schema, model } = require("mongoose");
+const bcrypt = require("bcrypt");
 
 const userSchema = new Schema({
   username: {
@@ -22,6 +22,21 @@ const userSchema = new Schema({
     required: true,
     minlength: 6,
   },
+  favorites: [
+    {
+      charity_name: {
+        type: String,
+        required: true,
+        unique: true,
+      },
+    },
+  ],
+  donations: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Donation",
+    },
+  ],
 });
 
 userSchema.pre("save", async function (next) {
@@ -38,4 +53,4 @@ userSchema.methods.isCorrectPassword = async function (password) {
 
 const User = model("User", userSchema);
 
-export default User;
+module.exports = User;
