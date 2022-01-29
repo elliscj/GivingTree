@@ -177,7 +177,7 @@ function DashboardContent() {
                     <Chart />
                   </Paper>
                 </Grid>
-                {/* Recent Deposits */}
+                {/* Recent Donations */}
                 <Grid item xs={12} md={4} lg={3}>
                   <Paper
                     sx={{
