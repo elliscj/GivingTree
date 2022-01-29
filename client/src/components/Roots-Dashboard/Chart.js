@@ -10,10 +10,11 @@ import {
   Label,
   ResponsiveContainer,
 } from "recharts";
+import Title from "./Title";
 
 // Generate Sales Data
-function createData(time, amount) {
-  return { time, amount };
+function createData(date, amount) {
+  return { date, amount };
 }
 
 const data = [
@@ -24,62 +25,60 @@ const data = [
   createData("12:00", 1500),
   createData("15:00", 2000),
   createData("18:00", 2400),
-  createData("21:00", 2400),
+  createData("21:00", 200),
   createData("24:00", 600),
 ];
 
-function Chart() {
+export default function Chart() {
   const theme = useTheme();
 
   return (
     <>
-      <Paper elevation={6} className="paper">
-        <LineChart
-          width={1000}
-          height={400}
-          data={data}
-          margin={{
-            top: 16,
-            right: 16,
-            bottom: 0,
-            left: 24,
-          }}
-        >
-          <XAxis
-            dataKey="time"
-            stroke={theme.palette.text.secondary}
-            style={theme.typography.body2}
-          />
-          <YAxis
-            stroke={theme.palette.text.secondary}
-            style={theme.typography.body2}
-          >
-            <Label
-              angle={270}
-              position="center"
-              style={{
-                textAnchor: "middle",
-                fill: theme.palette.text.primary,
-                ...theme.typography.body1,
-              }}
-            >
-              Sales ($)
-            </Label>
-          </YAxis>
-          <Line
-            isAnimationActive={true}
-            type="monotone"
-            dataKey="amount"
-            stroke="#00FF17"
-            dot={true}
-          />
-          <CartesianGrid stroke="#eee" strokeDasharray="5 5" />
+      <Title>Your Donations</Title>
 
-          <Line type="monotone" dataKey="amout" stroke="#000000" />
-        </LineChart>
-      </Paper>
+      <LineChart
+        width={1000}
+        height={400}
+        data={data}
+        margin={{
+          top: 16,
+          right: 16,
+          bottom: 0,
+          left: 24,
+        }}
+      >
+        <XAxis
+          dataKey="time"
+          stroke={theme.palette.text.secondary}
+          style={theme.typography.body2}
+        />
+        <YAxis
+          stroke={theme.palette.text.secondary}
+          style={theme.typography.body2}
+        >
+          <Label
+            angle={270}
+            position="left"
+            style={{
+              textAnchor: "middle",
+              fill: theme.palette.text.primary,
+              ...theme.typography.body1,
+            }}
+          >
+            Donations ($)
+          </Label>
+        </YAxis>
+        <Line
+          isAnimationActive={true}
+          type="monotone"
+          dataKey="amount"
+          stroke="#00FF17"
+          dot={true}
+        />
+        <CartesianGrid stroke="#eee" strokeDasharray="5 5" />
+
+        <Line type="monotone" dataKey="amout" stroke="#000000" />
+      </LineChart>
     </>
   );
 }
-
-export default Chart;
