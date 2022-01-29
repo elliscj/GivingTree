@@ -1,6 +1,7 @@
 // Axios is a popular NPM package used for preforming API requests
 import axios from "axios";
 
+
 const MY_KEY = process.env.REACT_APP_API_KEY;
 
 const search = (query) =>
@@ -9,3 +10,4 @@ const search = (query) =>
   );
 
 export default { search };
+

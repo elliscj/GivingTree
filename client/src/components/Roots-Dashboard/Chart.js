@@ -1,6 +1,8 @@
 import * as React from "react";
 import { useTheme } from "@mui/material/styles";
+import { Paper, CssBaseline } from "@material-ui/core";
 import {
+  CartesianGrid,
   LineChart,
   Line,
   XAxis,
@@ -8,7 +10,6 @@ import {
   Label,
   ResponsiveContainer,
 } from "recharts";
-// import Title from "./Title";
 
 // Generate Sales Data
 function createData(time, amount) {
@@ -24,17 +25,18 @@ const data = [
   createData("15:00", 2000),
   createData("18:00", 2400),
   createData("21:00", 2400),
-  createData("24:00", undefined),
+  createData("24:00", 600),
 ];
 
-export default function Chart() {
+function Chart() {
   const theme = useTheme();
 
   return (
     <>
-      {/* <Title>Today</Title> */}
-      <ResponsiveContainer>
+      <Paper elevation={6} className="paper">
         <LineChart
+          width={1000}
+          height={400}
           data={data}
           margin={{
             top: 16,
@@ -54,7 +56,7 @@ export default function Chart() {
           >
             <Label
               angle={270}
-              position="left"
+              position="center"
               style={{
                 textAnchor: "middle",
                 fill: theme.palette.text.primary,
@@ -65,14 +67,19 @@ export default function Chart() {
             </Label>
           </YAxis>
           <Line
-            isAnimationActive={false}
+            isAnimationActive={true}
             type="monotone"
             dataKey="amount"
-            stroke={theme.palette.primary.main}
-            dot={false}
+            stroke="#00FF17"
+            dot={true}
           />
+          <CartesianGrid stroke="#eee" strokeDasharray="5 5" />
+
+          <Line type="monotone" dataKey="amout" stroke="#000000" />
         </LineChart>
-      </ResponsiveContainer>
+      </Paper>
     </>
   );
 }
+
+export default Chart;

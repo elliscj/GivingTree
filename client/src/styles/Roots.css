@@ -1,0 +1,23 @@
+.RootGreeting {
+  justify-content: center;
+  font-family: "Hind", sans-serif;
+}
+
+.rootcard {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: black;
+  font-family: "Hind", sans-serif;
+}
+
+.cardButtons {
+  font-family: "Hind", sans-serif;
+}
+
+.paper {
+  margin: 25px;
+  text-align: center;
+  font-family: "Hind", sans-serif;
+}
