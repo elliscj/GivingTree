@@ -13,7 +13,6 @@ import {
 import Flower from "../../assets/images/flower.png";
 import Branch from "../../assets/images/branch.png";
 import Leaf from "../../assets/images/leaf.png";
-import Root from "../../assets/images/root.png";
 import TaxDoc from "../../assets/images/tax.png";
 import Profile from "../../assets/images/user.png";
 
@@ -24,13 +23,14 @@ import ListSubheader from "@mui/material/ListSubheader";
 
 export const mainListItems = (
   <div>
-    {/*  */}
+    {/* Branches list item */}
     <ListItem>
       <Button>
         <img alt="branch icon" alt="" src={Branch} height={35} width={35} />
         <Typography>Branches</Typography>
       </Button>
     </ListItem>
+    {/* leaf list item */}
     <ListItem>
       <Button>
         <img alt="leaf icon" alt="" src={Leaf} height={35} width={35} />
@@ -38,6 +38,7 @@ export const mainListItems = (
         <Typography>Leafs</Typography>
       </Button>
     </ListItem>
+    {/* Flower list item */}
     <ListItem>
       <Button>
         <img alt="flower icon" src={Flower} height={35} width={35} />
@@ -45,6 +46,7 @@ export const mainListItems = (
         <Typography>Flowers</Typography>
       </Button>
     </ListItem>
+    {/* Tax docs list item */}
     <ListItem>
       <Button>
         <img alt="Tax Docs icon" src={TaxDoc} height={35} width={35} />
@@ -52,6 +54,7 @@ export const mainListItems = (
         <Typography>Tax Docs</Typography>
       </Button>
     </ListItem>
+    {/* profile list item */}
     <ListItem>
       <Button>
         <img alt="profile icon" src={Profile} height={35} width={35} />
