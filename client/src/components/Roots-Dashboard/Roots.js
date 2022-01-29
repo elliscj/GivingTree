@@ -16,6 +16,7 @@ import FlowerCard from "./RootsFlowerCard";
 import BranchCard from "./RootsBranchCard";
 import LeafCard from "./RootsLeafCard";
 import Chart from "./Chart";
+import Donations from "./Donations";
 
 // const GetUsername
 
@@ -23,6 +24,8 @@ function Roots() {
   return (
     <>
       <Dashboard />
+      <Chart />
+      <Donations />
       {/* <Typography variant="h5" className="RootGreeting">
         Welcome "user.username" to your Roots
       </Typography>
