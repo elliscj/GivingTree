@@ -40,7 +40,7 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addFavorite(charity_name: String!): Favorite
     removeFavorite(favoriteId: ID!): Favorite
-    addDonation(favoriteId: ID!, amount: Int): Favorite
+    addDonation(username: String!, charity_name: String!, amount: Int): Donation
   }
 `;
 
