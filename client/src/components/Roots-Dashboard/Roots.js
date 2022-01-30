@@ -24,8 +24,7 @@ function Roots() {
   return (
     <>
       <Dashboard />
-      <Chart />
-      <Donations />
+
       {/* <Typography variant="h5" className="RootGreeting">
         Welcome "user.username" to your Roots
       </Typography>

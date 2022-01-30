@@ -4,6 +4,7 @@ import { styled, createTheme, ThemeProvider } from "@mui/material/styles";
 import MuiDrawer from "@mui/material/Drawer";
 import MuiAppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
+
 import { Menu, ChevronLeft } from "@mui/icons-material";
 import {
   Badge,
@@ -30,15 +31,18 @@ import { mainListItems, secondaryListItems } from "./listItems";
 import Chart from "./Chart";
 import Donations from "./Donations";
 import Root from "../../assets/images/root.png";
-// import Deposits from "./Deposits";
-// import Orders from "./Orders";
+import Branch from "./RootsBranchCard";
+import Flowers from "./RootsFlowerCard";
+import Leafs from "./RootsLeafCard";
 
-const drawerWidth = 200;
+const drawerWidth = 240;
 
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== "open",
 })(({ theme, open }) => ({
   zIndex: theme.zIndex.drawer + 1,
+  height: "65px",
+
   transition: theme.transitions.create(["width", "margin"], {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
@@ -104,7 +108,7 @@ function DashboardContent() {
                 aria-label="open drawer"
                 onClick={toggleDrawer}
                 sx={{
-                  marginRight: "36px",
+                  marginRight: "24px",
                   ...(open && { display: "none" }),
                 }}
               >
@@ -118,7 +122,7 @@ function DashboardContent() {
                 noWrap
                 sx={{ flexGrow: 1 }}
               >
-                Your Roots
+                Your Roots Dashboard
               </Typography>
             </Toolbar>
           </AppBar>
@@ -164,38 +168,43 @@ function DashboardContent() {
 
             <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
               <Grid container spacing={3}>
-                {/* Chart */}
+                {/* Donation Amounts Chart */}
                 <Grid item xs={12} md={8} lg={9}>
                   <Paper
                     sx={{
                       p: 2,
                       display: "flex",
                       flexDirection: "column",
-                      height: 600,
+                      height: 240,
                     }}
                   >
                     <Chart />
                   </Paper>
                 </Grid>
-                {/* Recent Donations */}
-                <Grid item xs={12} md={4} lg={3}>
+                {/* Leafs - Recent Donations */}
+                <Grid item xs={12} md={8} lg={9}>
                   <Paper
                     sx={{
                       p: 2,
                       display: "flex",
                       flexDirection: "column",
-                      height: 600,
+                      height: 240,
                     }}
                   >
                     <Donations />
                   </Paper>
                 </Grid>
-                {/* Recent Orders */}
-                <Grid item xs={12}>
+                {/* Branches - Favorite Organizations */}
+                <Grid item xs={3}>
                   <Paper
-                    sx={{ p: 2, display: "flex", flexDirection: "column" }}
+                    sx={{
+                      p: 2,
+                      display: "flex",
+                      flexDirection: "column",
+                      height: "240",
+                    }}
                   >
-                    <Chart />
+                    <Branch />
                   </Paper>
                 </Grid>
               </Grid>
