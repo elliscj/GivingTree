@@ -9,6 +9,7 @@ import {
   Typography,
   Paper,
 } from "@material-ui/core";
+import Title from "./Title";
 import Branch from "../../assets/images/branch.png";
 import "../../styles/Roots.css";
 
@@ -23,10 +24,10 @@ export default function BranchCard() {
             alt="flower icon"
           /> */}
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Title gutterBottom variant="h5" component="div">
             Your Branches
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
+          </Title>
+          <Typography variant="body1" color="text.secondary">
             Branches represent your Organization Groups
           </Typography>
         </CardContent>
