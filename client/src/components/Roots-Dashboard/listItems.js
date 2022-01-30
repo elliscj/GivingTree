@@ -24,43 +24,42 @@ import ListSubheader from "@mui/material/ListSubheader";
 export const mainListItems = (
   <div>
     {/* Branches list item */}
-    <ListItem>
-      <Button>
-        <img alt="branch icon" alt="" src={Branch} height={35} width={35} />
-        <Typography>Branches</Typography>
-      </Button>
+    <ListItem button>
+      <ListItemIcon>
+        <img alt="branch icon" src={Branch} height={35} width={35} />
+      </ListItemIcon>
+      <ListItemText primary="Charity Groups" />
     </ListItem>
     {/* leaf list item */}
-    <ListItem>
-      <Button>
-        <img alt="leaf icon" alt="" src={Leaf} height={35} width={35} />
-
-        <Typography>Leafs</Typography>
-      </Button>
+    <ListItem button>
+      <ListItemIcon>
+        <img alt="leaf icon" src={Leaf} height={35} width={35} />
+      </ListItemIcon>
+      <ListItemText primary="Charities" />
     </ListItem>
     {/* Flower list item */}
-    <ListItem>
-      <Button>
+    <ListItem button>
+      <ListItemIcon>
         <img alt="flower icon" src={Flower} height={35} width={35} />
+      </ListItemIcon>
 
-        <Typography>Flowers</Typography>
-      </Button>
+      <ListItemText primary="Dontations" />
     </ListItem>
     {/* Tax docs list item */}
-    <ListItem>
-      <Button>
+    <ListItem button>
+      <ListItemIcon>
         <img alt="Tax Docs icon" src={TaxDoc} height={35} width={35} />
+      </ListItemIcon>
 
-        <Typography>Tax Docs</Typography>
-      </Button>
+      <ListItemText primary="Tax Documents" />
     </ListItem>
     {/* profile list item */}
-    <ListItem>
-      <Button>
+    <ListItem button>
+      <ListItemIcon>
         <img alt="profile icon" src={Profile} height={35} width={35} />
+      </ListItemIcon>
 
-        <Typography>Profile</Typography>
-      </Button>
+      <ListItemText primary="Profile" />
     </ListItem>
   </div>
 );

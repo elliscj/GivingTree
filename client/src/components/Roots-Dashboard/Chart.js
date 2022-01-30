@@ -37,7 +37,7 @@ export default function Chart() {
       <Title>Your Donations</Title>
 
       <LineChart
-        width={1000}
+        width={900}
         height={400}
         data={data}
         margin={{
@@ -75,7 +75,7 @@ export default function Chart() {
           stroke="#00FF17"
           dot={true}
         />
-        <CartesianGrid stroke="#eee" strokeDasharray="5 5" />
+        <CartesianGrid stroke="#bbb" strokeDasharray="5 5" />
 
         <Line type="monotone" dataKey="amout" stroke="#000000" />
       </LineChart>
