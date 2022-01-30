@@ -122,7 +122,7 @@ function DashboardContent() {
                 noWrap
                 sx={{ flexGrow: 1 }}
               >
-                Your Roots Dashboard
+                Your Roots - Donation Dashboard
               </Typography>
             </Toolbar>
           </AppBar>
@@ -157,24 +157,15 @@ function DashboardContent() {
             }}
           >
             <Toolbar />
-            {/* <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-              <Grid container spacing={3}>
-                Chart
-                <Grid item xs={12} md={8} lg={9}>
-                  <Chart />
-                </Grid>
-              </Grid>
-            </Container> */}
-
             <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-              <Grid container spacing={3}>
+              <Grid container spacing={4}>
                 {/* Donation Amounts Chart */}
-                <Grid item xs={12} md={8} lg={9}>
+                <Grid item xs={12} md={12} lg={10}>
                   <Paper
                     sx={{
                       p: 2,
                       display: "flex",
-                      flexDirection: "column",
+                      flexDirection: "row",
                       height: 240,
                     }}
                   >
@@ -182,7 +173,7 @@ function DashboardContent() {
                   </Paper>
                 </Grid>
                 {/* Leafs - Recent Donations */}
-                <Grid item xs={12} md={8} lg={9}>
+                <Grid item xs={12} md={12} lg={10}>
                   <Paper
                     sx={{
                       p: 2,
@@ -200,7 +191,31 @@ function DashboardContent() {
                     sx={{
                       p: 2,
                       display: "flex",
-                      flexDirection: "column",
+                      flexDirection: "row",
+                      height: "240",
+                    }}
+                  >
+                    <Flowers />
+                  </Paper>
+                </Grid>
+                <Grid item xs={3}>
+                  <Paper
+                    sx={{
+                      p: 2,
+                      display: "flex",
+                      flexDirection: "row",
+                      height: "240",
+                    }}
+                  >
+                    <Leafs />
+                  </Paper>
+                </Grid>
+                <Grid item xs={3}>
+                  <Paper
+                    sx={{
+                      p: 2,
+                      display: "flex",
+                      flexDirection: "row",
                       height: "240",
                     }}
                   >
@@ -208,7 +223,6 @@ function DashboardContent() {
                   </Paper>
                 </Grid>
               </Grid>
-              {/* <Copyright sx={{ pt: 4 }} /> */}
             </Container>
           </Box>
         </Box>
