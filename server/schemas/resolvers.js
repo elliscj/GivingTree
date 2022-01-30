@@ -80,13 +80,18 @@ const resolvers = {
           amount,
         });
 
-        await User.findOneAndUpdate(
+        const newUserDonation = await User.findOneAndUpdate(
           {
-            id: context.user._id,
+            _id: context.user._id,
           },
-          { $addToSet: { donations: donation._id } }
-        );
+          { $addToSet: { donations: donation._id } },
+          { new: true }
+        ).populate("donations");
+        return newUserDonation;
       }
+      throw new AuthenticationError(
+        "Our branches must be crossed! You must be logged in to add a donation!"
+      );
     },
     removeFavorite: async (parent, { userId, charity_name }, context) => {
       if (context.user) {
