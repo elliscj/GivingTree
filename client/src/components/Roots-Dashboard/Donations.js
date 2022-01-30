@@ -83,7 +83,6 @@ export default function Donations() {
             <TableCell>Organization</TableCell>
             <TableCell>City</TableCell>
             <TableCell>State</TableCell>
-
             <TableCell>Payment Method</TableCell>
             <TableCell align="right">Donation Amount</TableCell>
           </TableRow>
