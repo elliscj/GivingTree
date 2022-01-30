@@ -73,6 +73,7 @@ const resolvers = {
       You must be logged in to add a favorite charity!`);
     },
     addDonation: async (parent, { charity_name, amount }, context) => {
+      console.log(context.user);
       if (context.user) {
         const donation = await Donation.create({
           username: context.user.username,
