@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import CharityIndexItem from "./components/indexItem";
-import Loader from "react-loader-spinner";
+import CharityIndexItem from "./indexItem";
+import { BallTriangle } from "react-loader-spinner";
 
 const CharityIndex = ({ city, state, category }) => {
   const [indexItems, setIndex] = useState();
@@ -54,7 +54,11 @@ const CharityIndex = ({ city, state, category }) => {
       ))}
     </div>
   ) : (
-    <Loader type="BallTriangle" color="rgb(93, 93, 94)" className="loading" />
+    <BallTriangle
+      type="BallTriangle"
+      color="rgb(93, 93, 94)"
+      className="loading"
+    />
   );
 };
 

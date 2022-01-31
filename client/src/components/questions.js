@@ -1,8 +1,8 @@
 import React from "react";
-import Location from "./components/location";
+import Location from "./location";
 import { useState, useEffect } from "react";
-import Interest from "./components/interest";
-import CharityIndex from "./components/charityIndex";
+import Interest from "./interest";
+import CharityIndex from "./charityIndex";
 
 import API from "../utils/API";
 
@@ -48,7 +48,11 @@ const Questions = () => {
     setDisplay(<CharityIndex city={city} state={state} category={category} />);
   }
 
-  return <div className="time-outer">{currDisplay}</div>;
+  return currDisplay ? (
+    <div className="time-outer">{currDisplay}</div>
+  ) : (
+    <h1>No Data</h1>
+  );
 };
 
 export default Questions;
