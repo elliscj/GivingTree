@@ -82,6 +82,16 @@ export default function SignIn() {
               margin="normal"
               required
               fullWidth
+              id="username"
+              label="Username"
+              name="usrname"
+              autoComplete="username"
+              autoFocus
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
               name="password"
               label="Password"
               type="password"
@@ -111,7 +121,6 @@ export default function SignIn() {
             </Grid>
           </Box>
         </Box>
-        <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
     </ThemeProvider>
   );
