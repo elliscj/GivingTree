@@ -79,7 +79,7 @@ export default function SignUp() {
                   fullWidth
                   id="username"
                   label="Username"
-                  name="usrname"
+                  name="username"
                   autoComplete="username"
                   autoFocus
                 />
