@@ -27,7 +27,6 @@ header a {
   padding-bottom: 10px;
 }
 
-
 header {
   -webkit-animation: fadein 1.5s; /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadein 1.5s; /* Firefox < 16 */
@@ -35,13 +34,9 @@ header {
   -o-animation: fadein 1.5s; /* Opera < 12.1 */
   animation: fadein 1.5s;
   font-family: "Open Sans Condensed", sans-serif;
-.landin {
-  z-index: 1;
-
 }
-
 .landing {
-  z-index: 1;
+  z-index: 2;
 }
 
 h1 {
