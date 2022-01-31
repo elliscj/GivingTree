@@ -13,6 +13,8 @@ header {
     #ffffff,
     rgb(189, 189, 192)
   );
+
+  z-index: 1;
 }
 
 header a {
