@@ -1,10 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+// import "./index.css";
 import App from "./App";
 // import reportWebVitals from "./reportWebVitals";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+// ReactDOM.render(<App />, document.getElementById("root"));
+
+document.addEventListener("DOMContentLoaded", () => {
+  const root = document.getElementById("root");
+  ReactDOM.render(<App />, root);
+});
 
 // ReactDOM.render(
 //   <React.StrictMode>

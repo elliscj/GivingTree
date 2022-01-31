@@ -26,12 +26,8 @@ const Landing = () => {
       </video>
       <header className="landing">
         <h1>Welcome to GreenTree!</h1>
-        {/* <h3>
-        This site can help you find opportunities to contribute to charitable
-        organizations and causes based on location and interest areas. Get
-        started below.
-      </h3> */}
-        <Link className="btn-green" to="/components/NavBar">
+
+        <Link className="btn-green" to="/components/questions">
           Get Started
         </Link>
       </header>
