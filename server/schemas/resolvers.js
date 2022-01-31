@@ -52,11 +52,11 @@ const resolvers = {
 
       return { token, user };
     },
-    addFavorite: async (parent, { userId, charity_name }, context) => {
+    addFavorite: async (parent, { charity_name }, context) => {
       if (context.user) {
-        return User.findOneAndUpdate(
+        const usersNewFavorite = await User.findOneAndUpdate(
           {
-            _id: userId,
+            _id: context.user._id,
           },
           {
             $addToSet: {
@@ -68,6 +68,7 @@ const resolvers = {
             runValidators: true,
           }
         );
+        return usersNewFavorite;
       }
       throw new AuthenticationError(`Our branches must be crossed!
       You must be logged in to add a favorite charity!`);
@@ -94,10 +95,10 @@ const resolvers = {
         "Our branches must be crossed! You must be logged in to add a donation!"
       );
     },
-    removeFavorite: async (parent, { userId, charity_name }, context) => {
+    removeFavorite: async (parent, { charity_name }, context) => {
       if (context.user) {
         return User.findOneAndUpdate(
-          { id: userId },
+          { _id: context.user._id },
           {
             $pull: {
               favorites: {
