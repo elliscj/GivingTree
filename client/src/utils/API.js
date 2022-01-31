@@ -3,9 +3,13 @@ import axios from "axios";
 
 // const MY_KEY = process.env.REACT_APP_API_KEY;
 
-const search = async (query) =>
-  axios.get(
-    `https://api.data.charitynavigator.org/v2/Organizations?app_id=1f111d45&app_key=45644615277bb0eaacf2e9e76d6fb930=${query}`
+const search = async (city, state, category) => {
+  const apiCall = await axios.get(
+    `/api/questions/${city}/${state}/${category}`
   );
+  console.log(apiCall);
+
+  return apiCall;
+};
 
 export default { search };
