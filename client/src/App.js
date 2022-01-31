@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import { HashRouter, Route, Switch } from "react-router-dom";
-import Landing from "./components/landing";
+import Landing from "./components/Landing";
 import Questions from "./components/questions";
 import CharityIndex from "./components/charityIndex";
 // import Roots from "./components/Roots-Dashboard/Roots";
