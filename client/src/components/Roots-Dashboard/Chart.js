@@ -35,7 +35,6 @@ export default function Chart() {
   return (
     <>
       <Title>Your Donations</Title>
-
       <LineChart
         width={1000}
         height={400}
