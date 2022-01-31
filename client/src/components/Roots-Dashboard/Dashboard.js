@@ -24,7 +24,7 @@ import {
   Link,
   Paper,
   Typography,
-} from "@material-ui/core";
+} from "@material-ui";
 
 import { mainListItems, secondaryListItems } from "./listItems";
 
@@ -43,6 +43,7 @@ const AppBar = styled(MuiAppBar, {
   zIndex: theme.zIndex.drawer + 1,
   height: "65px",
   marginTop: "65px",
+  paddingTop: "15px",
 
   transition: theme.transitions.create(["width", "margin"], {
     easing: theme.transitions.easing.sharp,
@@ -116,7 +117,7 @@ function DashboardContent() {
               >
                 <Menu />
               </IconButton>
-              <img src={Root} height={50} width={50} />
+              <img src={Root} height={35} width={35} />
               <Typography
                 component="h1"
                 variant="h6"

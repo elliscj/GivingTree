@@ -18,6 +18,7 @@ header {
     #ffffff,
     rgb(189, 189, 192)
   ); */
+  z-index: 2;
 }
 
 header a {
@@ -26,8 +27,16 @@ header a {
   padding-bottom: 10px;
 }
 
-.landin {
-  z-index: 1;
+header {
+  -webkit-animation: fadein 1.5s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 1.5s; /* Firefox < 16 */
+  -ms-animation: fadein 1.5s; /* Internet Explorer */
+  -o-animation: fadein 1.5s; /* Opera < 12.1 */
+  animation: fadein 1.5s;
+  font-family: "Open Sans Condensed", sans-serif;
+}
+.landing {
+  z-index: 2;
 }
 
 h1 {
