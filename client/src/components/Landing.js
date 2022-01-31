@@ -25,11 +25,7 @@ const Landing = () => {
         <source src={backgroundVideo} type="video/mp4" />
       </video>
       <header className="landing">
-
-        <h1 className="header">Welcome to GivingTree!</h1>
-
-
-
+        <h1 className="landing">Welcome to GivingTree!</h1>
 
         <Link className="btn-green" to="/components/questions">
           Get Started
