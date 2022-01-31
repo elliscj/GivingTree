@@ -8,38 +8,30 @@ import API from "../utils/API";
 
 const Questions = () => {
   //display stage order: Location, Interest Area, Index
-  const [currDisplay, setDisplay] = useState();
+
+  const [currDisplay, setDisplay] = useState("location");
   const [displayNum, setNum] = useState(0);
 
   // query vars
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState("1");
+  const [charities, setCharities] = useState([]);
 
-  const searchCharity = (query) =>
-    API.search(query)
-      .then((res) => setDisplay(res.data))
-      .catch((err) => console.log(err));
+  const searchCharity = async () => {
+    console.log({ city, state, category });
+    const result = await API.search(city, state, category);
 
-  useEffect(() => {
-    searchCharity(<Location handleSubmit={handleSubmit} />);
-  }, []);
+    setCharities(result.data);
+    console.log(result.data);
+  };
+  // useEffect(() => {
+  //   searchCharity();
+  // }, []);
 
-  const handleSubmit = (type, data) => {
-    switch (type) {
-      case "loc":
-        setCity(data.city);
-        setState(data.state);
-        setNum(1);
-        return setTimeout(
-          () => searchCharity(<Interest handleSubmit={handleSubmit} />),
-          500
-        );
-
-      case "interest":
-        setCategory(data.category);
-        setNum(2);
-    }
+  const handleSubmit = (e) => {
+    // e.preventDefault();
+    searchCharity();
   };
 
   // both location and interest are submitted, setDisplay out here to have access to vars and pass as props
@@ -48,10 +40,26 @@ const Questions = () => {
     setDisplay(<CharityIndex city={city} state={state} category={category} />);
   }
 
-  return currDisplay ? (
-    <div className="time-outer">{currDisplay}</div>
+  return currDisplay === "location" ? (
+    <Location
+      onSubmit={handleSubmit}
+      city={city}
+      state={state}
+      setCity={setCity}
+      setState={setState}
+      setDisplay={setDisplay}
+    />
+  ) : currDisplay === "interest" ? (
+    <Interest
+      handleSubmit={handleSubmit}
+      setCategory={setCategory}
+      category={category}
+      setDisplay={setDisplay}
+    />
+  ) : currDisplay === "index" ? (
+    <CharityIndex charities={charities} />
   ) : (
-    <h1>No Data</h1>
+    <p>Wrong State</p>
   );
 };
 

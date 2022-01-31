@@ -1,14 +1,16 @@
 import React from "react";
+import CharityIndex from "./charityIndex";
 
-const Interest = ({ handleSubmit }) => {
-  const [category, setCategory] = React.useState("1");
+const Interest = ({ handleSubmit, category, setCategory, setDisplay }) => {
+  // const [category, setCategory] = React.useState("1");
 
   const compileData = (e) => {
     e.preventDefault();
     const data = {
       category,
     };
-    handleSubmit("interest", data);
+    handleSubmit();
+    setDisplay("index");
   };
 
   return (
