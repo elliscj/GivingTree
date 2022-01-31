@@ -1,5 +1,7 @@
 // reference links https://www.positronx.io/react-pdf-tutorial-generate-pdf-in-react-with-jspdf/
 // IRS docs on Charitable donations https://www.irs.gov/charities-non-profits/charitable-contributions
+// IRS docs on Charitable donations https://www.irs.gov/pub/irs-pdf/p526.pdf
+// Donation receipt 501c3 Eform https://eforms.com/receipt/donation/501c3/
 
 import React from "react";
 import jsPDF from "jspdf";
