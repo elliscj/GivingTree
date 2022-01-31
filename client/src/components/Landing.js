@@ -19,13 +19,13 @@ const Landing = () => {
           height: "100%",
           objectFit: "cover",
           transform: "translate(-50%, -50%)",
-          zIndex: "-1",
+          // zIndex: "-1",
         }}
       >
         <source src={backgroundVideo} type="video/mp4" />
       </video>
       <header className="landing">
-        <h1>Welcome to GreenTree!</h1>
+        <h1 className="header">Welcome to GivingTree!</h1>
 
         <Link className="btn-green" to="/components/questions">
           Get Started
