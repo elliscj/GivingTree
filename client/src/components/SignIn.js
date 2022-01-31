@@ -78,16 +78,7 @@ export default function SignIn() {
               autoComplete="email"
               autoFocus
             />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="username"
-              label="Username"
-              name="usrname"
-              autoComplete="username"
-              autoFocus
-            />
+
             <TextField
               margin="normal"
               required
