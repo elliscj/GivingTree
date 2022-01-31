@@ -1,6 +1,11 @@
 import React from "react";
+
 import "./App.css";
 import { HashRouter, Route, Switch } from "react-router-dom";
+
+import "./styles/app.css";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+
 import Landing from "./components/Landing";
 import Questions from "./components/questions";
 import CharityIndex from "./components/charityIndex";
@@ -10,7 +15,7 @@ import CharityIndex from "./components/charityIndex";
 const App = () => {
   return (
     // <Roots />
-    <HashRouter>
+    <BrowserRouter>
       <div>
         <Switch>
           <Route exact path="/" component={Landing} />
@@ -23,7 +28,7 @@ const App = () => {
           />
         </Switch>
       </div>
-    </HashRouter>
+    </BrowserRouter>
   );
 };
 
