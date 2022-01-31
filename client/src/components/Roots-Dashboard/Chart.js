@@ -12,6 +12,8 @@ import {
 } from "recharts";
 import Title from "./Title";
 
+// need to import donation data from database to display dynamically in chart
+
 // Generate Sales Data
 function createData(date, amount) {
   return { date, amount };
