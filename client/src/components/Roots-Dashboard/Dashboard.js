@@ -42,6 +42,7 @@ const AppBar = styled(MuiAppBar, {
 })(({ theme, open }) => ({
   zIndex: theme.zIndex.drawer + 1,
   height: "65px",
+  marginTop: "65px",
 
   transition: theme.transitions.create(["width", "margin"], {
     easing: theme.transitions.easing.sharp,
@@ -61,6 +62,7 @@ const Drawer = styled(MuiDrawer, {
   shouldForwardProp: (prop) => prop !== "open",
 })(({ theme, open }) => ({
   "& .MuiDrawer-paper": {
+    // marginTop: "65px",
     position: "relative",
     whiteSpace: "nowrap",
     width: drawerWidth,
@@ -122,7 +124,7 @@ function DashboardContent() {
                 noWrap
                 sx={{ flexGrow: 1 }}
               >
-                Your Roots - Donation Dashboard
+                Your Roots
               </Typography>
             </Toolbar>
           </AppBar>
