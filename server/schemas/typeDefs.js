@@ -38,9 +38,9 @@ const typeDefs = gql`
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addFavorite(charity_name: String!): Favorite
-    removeFavorite(favoriteId: ID!): Favorite
-    addDonation(favoriteId: ID!, amount: Int): Favorite
+    addFavorite(_id: ID!, charity_name: String!): User
+    removeFavorite(_id: ID!, charity_name: String!): User
+    addDonation(username: String!, charity_name: String!, amount: Int): User
   }
 `;
 

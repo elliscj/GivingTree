@@ -21,7 +21,7 @@ module.exports = {
       });
       req.user = data;
     } catch {
-      console.log(`%cInvalid Token`, "color: orange");
+      console.log("Invalid Token");
     }
 
     return req;
