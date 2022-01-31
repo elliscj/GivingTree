@@ -1,5 +1,5 @@
 import * as React from "react";
-import AppBar from "@mui/material/AppBar";
+import NavBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
@@ -41,7 +41,7 @@ const ResponsiveAppBar = () => {
   };
 
   return (
-    <AppBar position="sticky" sx={{ height: "65px" }}>
+    <NavBar position="static" sx={{ height: "65px" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -145,7 +145,7 @@ const ResponsiveAppBar = () => {
           </Box>
         </Toolbar>
       </Container>
-    </AppBar>
+    </NavBar>
   );
 };
 export default ResponsiveAppBar;
