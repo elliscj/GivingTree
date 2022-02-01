@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/Landing.css";
-import backgroundVideo from "../assets/landing1.mp4";
+import backgroundVideo from "../assets/Gtree.mp4";
 import { Button, Typography } from "@mui/material";
 
 const Landing = () => {
   return (
-    <div className="landing">
+    <div style={{ backgroundColor: "#f1ebe2," }} className="landing">
       <video
         autoPlay
         muted
@@ -20,13 +20,14 @@ const Landing = () => {
           height: "100%",
           objectFit: "cover",
           transform: "translate(-50%, -50%)",
+
           // zIndex: "-1",
         }}
       >
         <source src={backgroundVideo} type="video/mp4" />
       </video>
       <header className="landing">
-        <h1 className="landing">Welcome to GivingTree!</h1>
+        <h1 className="landing">Welcome To GivingTree!</h1>
 
         <Button>
           <Link className="btn-green" to="/questions">

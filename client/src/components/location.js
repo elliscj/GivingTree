@@ -1,4 +1,5 @@
 import React from "react";
+import backgroundVideo from "../assets/donate.mp4";
 
 // function formatCity(city) {
 //   if (!city.length) return "";
@@ -55,31 +56,51 @@ const Location = ({
 
   // invalidData();
   return (
-    <form className={klass}>
-      <h3>Where are you located/where can you help?</h3>
-      <input
-        type="text"
-        value={city}
-        placeholder="city (San Francisco)"
-        onChange={(e) => setCity(e.target.value)}
-      />
-      <input
-        type="text"
-        value={state}
-        placeholder="state (CA)"
-        onChange={(e) => setState(e.target.value.toUpperCase().trim())}
-      />
-      <input type="hidden" value="USA" />
-      <button
-        disabled={!city || !state}
-        type="submit"
-        value="submit"
-        onClick={compileData}
+    <div className="lamp">
+      <video
+        autoPlay
+        muted
+        loop
+        id="myVideoLoc"
+        style={{
+          position: "absolute",
+          top: "32%",
+          left: "50%",
+          width: "90%",
+          height: "35%",
+          // objectFit: "cover",
+          transform: "translate(-50%, -50%)",
+          // zIndex: 2,
+        }}
       >
-        Submit
-      </button>
-      <span style={{ color: "red" }}>{validation}</span>
-    </form>
+        <source src={backgroundVideo} type="video/mp4" />
+      </video>
+      <form className={klass}>
+        <h3>Where are you located/where can you help?</h3>
+        <input
+          type="text"
+          value={city}
+          placeholder="city (San Francisco)"
+          onChange={(e) => setCity(e.target.value)}
+        />
+        <input
+          type="text"
+          value={state}
+          placeholder="state (CA)"
+          onChange={(e) => setState(e.target.value.toUpperCase().trim())}
+        />
+        <input type="hidden" value="USA" />
+        <button
+          disabled={!city || !state}
+          type="submit"
+          value="submit"
+          onClick={compileData}
+        >
+          Submit
+        </button>
+        <span style={{ color: "red" }}>{validation}</span>
+      </form>
+    </div>
   );
 };
 
