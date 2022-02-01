@@ -99,10 +99,10 @@ export default function Donations() {
             </TableRow>
           ))}
         </TableBody>
+        <Link color="primary" href="#" onClick={preventDefault} sx={{ mt: 3 }}>
+          See more Donations
+        </Link>
       </Table>
-      <Link color="primary" href="#" onClick={preventDefault} sx={{ mt: 3 }}>
-        See more Donations
-      </Link>
     </>
   );
 }
