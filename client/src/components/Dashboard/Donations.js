@@ -9,6 +9,8 @@ import Title from "./Title";
 import { Grid, Paper } from "@mui/material";
 import { padding } from "@mui/system";
 
+import DonationLog from "./DonationLogForm";
+
 // Generate Order Data
 function createData(
   id,
@@ -98,6 +100,7 @@ export default function Donations() {
           </Table>
         </Paper>
       </Grid>
+      <DonationLog />
     </>
   );
 }
