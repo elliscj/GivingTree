@@ -36,9 +36,13 @@ const ResponsiveAppBar = () => {
   };
 
   return (
-    <AppBar position="static" sx={{ height: "65px" }}>
+    <AppBar
+      position="static"
+      sx={{ height: "65px", backgroundColor: "#5d6d47" }}
+      className="navbarcss"
+    >
       <Container maxWidth="xl" className="navbarcss">
-        <Toolbar disableGutters>
+        <Toolbar disableGutters className="navbarcss">
           <Typography
             variant="h6"
             noWrap
@@ -50,7 +54,6 @@ const ResponsiveAppBar = () => {
           <Box
             sx={{
               flexGrow: 1,
-
               display: { xs: "flex", md: "none" },
             }}
           >
@@ -79,7 +82,10 @@ const ResponsiveAppBar = () => {
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: "block", md: "none" },
+                display: {
+                  xs: "block",
+                  md: "none",
+                },
               }}
             >
               <Button
