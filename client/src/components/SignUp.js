@@ -13,6 +13,8 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
+import "../styles/SignUp.css";
+
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../utils/mutations/userMutations";
 
@@ -152,6 +154,7 @@ const SignUp = () => {
               </Grid>
             </Grid>
             <Button
+              style={{ backgroundColor: "#5d6d47" }}
               type="submit"
               fullWidth
               variant="contained"

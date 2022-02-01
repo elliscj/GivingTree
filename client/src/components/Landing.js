@@ -1,30 +1,29 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/Landing.css";
-import backgroundVideo from "../assets/landing1.mp4";
+import backgroundVideo from "../assets/landing.gif";
 import { Button, Typography } from "@mui/material";
 
 const Landing = () => {
   return (
     <div className="landing">
-      <video
-        autoPlay
-        muted
-        loop
+      <img
+        src={backgroundVideo}
+        alt="growing tree animation"
         id="myVideo"
         style={{
           position: "absolute",
           top: "50%",
           left: "50%",
           width: "100%",
-          height: "100%",
+          height: "105%",
           objectFit: "cover",
           transform: "translate(-50%, -50%)",
           // zIndex: "-1",
         }}
-      >
-        <source src={backgroundVideo} type="video/mp4" />
-      </video>
+      ></img>
+      {/* <img src={backgroundVideo} alt="growing tree animation" /> */}
+
       <header className="landing">
         <h1 className="landing">Welcome to GivingTree!</h1>
 

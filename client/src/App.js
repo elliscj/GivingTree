@@ -19,7 +19,7 @@ import SignUp from "./components/SignUp";
 import SignIn from "./components/SignIn";
 // import Roots from "./components/Roots-Dashboard/Roots";
 import ResponsiveAppBar from "./components/NavBar";
-import Dashboard from "./components/Roots-Dashboard/Dashboard";
+import Dashboard from "./components/Dashboard/Dashboard";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
