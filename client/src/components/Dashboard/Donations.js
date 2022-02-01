@@ -6,6 +6,7 @@ import TableCell from "@mui/material/TableCell";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Title from "./Title";
+import { Paper } from "@mui/material";
 
 // Generate Order Data
 function createData(
@@ -75,34 +76,41 @@ function preventDefault(event) {
 export default function Donations() {
   return (
     <>
-      <Title>Recent Donations</Title>
-      <Table size="small">
-        <TableHead>
-          <TableRow>
-            <TableCell>Date</TableCell>
-            <TableCell>Organization</TableCell>
-            <TableCell>City</TableCell>
-            <TableCell>State</TableCell>
-            <TableCell>Payment Method</TableCell>
-            <TableCell align="right">Donation Amount</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.id}>
-              <TableCell>{row.date}</TableCell>
-              <TableCell>{row.organization}</TableCell>
-              <TableCell>{row.city}</TableCell>
-              <TableCell>{row.state}</TableCell>
-              <TableCell>{row.paymentMethod}</TableCell>
-              <TableCell align="right">{`$${row.amount}`}</TableCell>
+      <Paper>
+        <Title>Recent Donations</Title>
+        <Table size="small">
+          <TableHead>
+            <TableRow>
+              <TableCell>Date</TableCell>
+              <TableCell>Organization</TableCell>
+              <TableCell>City</TableCell>
+              <TableCell>State</TableCell>
+              <TableCell>Payment Method</TableCell>
+              <TableCell align="right">Donation Amount</TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-        <Link color="primary" href="#" onClick={preventDefault} sx={{ mt: 3 }}>
-          See more Donations
-        </Link>
-      </Table>
+          </TableHead>
+          <TableBody>
+            {rows.map((row) => (
+              <TableRow key={row.id}>
+                <TableCell>{row.date}</TableCell>
+                <TableCell>{row.organization}</TableCell>
+                <TableCell>{row.city}</TableCell>
+                <TableCell>{row.state}</TableCell>
+                <TableCell>{row.paymentMethod}</TableCell>
+                <TableCell align="right">{`$${row.amount}`}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+          <Link
+            color="primary"
+            href="#"
+            onClick={preventDefault}
+            sx={{ mt: 3 }}
+          >
+            See more Donations
+          </Link>
+        </Table>
+      </Paper>
     </>
   );
 }
