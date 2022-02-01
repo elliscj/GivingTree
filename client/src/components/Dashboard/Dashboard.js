@@ -139,8 +139,9 @@ function DashboardContent() {
             <Divider />
             <List>{mainListItems}</List>
             <Divider />
-            {/* <List>{secondaryListItems}</List> */}
+            <List>{secondaryListItems}</List>
           </Drawer>
+          {/* Cards displayed to right of tool box  */}
           <Box
             component="main"
             sx={{
@@ -154,8 +155,9 @@ function DashboardContent() {
             }}
           >
             <Toolbar />
+            {/* Dashboard content boxes */}
             <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-              <Grid container spacing={4}>
+              <Grid container spacing={6}>
                 {/* Donation Amounts Chart */}
                 <Grid item xs={12} md={12} lg={12}>
                   <Paper
@@ -169,8 +171,8 @@ function DashboardContent() {
                     <Chart />
                   </Paper>
                 </Grid>
-                {/* Leafs - Recent Donations */}
-                <Grid item xs={12} md={12} lg={10}>
+                {/* Donations table */}
+                <Grid item xs={12} md={12} lg={12}>
                   <Paper
                     sx={{
                       p: 2,
@@ -180,43 +182,6 @@ function DashboardContent() {
                     }}
                   >
                     <Donations />
-                  </Paper>
-                </Grid>
-                {/* Branches - Favorite Organizations */}
-                <Grid item xs={3}>
-                  <Paper
-                    sx={{
-                      p: 2,
-                      display: "flex",
-                      flexDirection: "row",
-                      height: "auto",
-                    }}
-                  >
-                    <Flowers />
-                  </Paper>
-                </Grid>
-                <Grid item xs={3}>
-                  <Paper
-                    sx={{
-                      p: 2,
-                      display: "flex",
-                      flexDirection: "row",
-                      height: "auto",
-                    }}
-                  >
-                    <Leafs />
-                  </Paper>
-                </Grid>
-                <Grid item xs={3}>
-                  <Paper
-                    sx={{
-                      p: 2,
-                      display: "flex",
-                      flexDirection: "row",
-                      height: "auto",
-                    }}
-                  >
-                    <Branch />
                   </Paper>
                 </Grid>
               </Grid>

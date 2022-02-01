@@ -20,6 +20,7 @@ import SignIn from "./components/SignIn";
 // import Roots from "./components/Roots-Dashboard/Roots";
 import ResponsiveAppBar from "./components/NavBar";
 import Dashboard from "./components/Dashboard/Dashboard";
+import Donations from "./components/Dashboard/Donations";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -56,6 +57,7 @@ const App = () => {
             <Route exact path="/questions" component={Questions} />
             <Route exact path="/charityIndex" component={CharityIndex} />
             <Route exact path="/Dashboard" component={Dashboard} />
+            <Route exact path="/donations" component={Donations} />
           </Switch>
         </div>
       </Router>
