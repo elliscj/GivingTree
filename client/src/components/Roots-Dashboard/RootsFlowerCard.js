@@ -1,41 +1,31 @@
 import * as React from "react";
-import {
-  Paper,
-  Box,
-  Card,
-  CardActions,
-  CardContent,
-  CardMedia,
-  Button,
-  Typography,
-} from "@material-ui/core";
-import Title from "./Title";
-import "../../styles/Roots.css";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 
 export default function FlowerCard() {
   return (
-    <>
-      <Card xs={{ maxWidth: 345 }} className="rootcard">
-        {/* <CardMedia
-            className="icons"
-            component="img"
-            image={Flower}
-            alt="flower icon"
-          /> */}
-        <CardContent>
-          <Title gutterBottom variant="h5" component="div">
-            Your Flowers
-          </Title>
-          <Typography variant="body1" color="text.secondary">
-            Flowers represent your individual Donations
-          </Typography>
-        </CardContent>
-        <CardActions>
-          <Button className="cardButtons" size="large">
-            View All Flowers
-          </Button>
-        </CardActions>
-      </Card>
-    </>
+    <Card sx={{ maxWidth: 345 }}>
+      {/* <CardMedia
+        component="img"
+        alt="green iguana"
+        height="140"
+        image="/static/images/cards/contemplative-reptile.jpg"
+      /> */}
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          Flowers
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          Flowers represent your individual Donations to Organizations
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button size="large">View Flowers</Button>
+      </CardActions>
+    </Card>
   );
 }

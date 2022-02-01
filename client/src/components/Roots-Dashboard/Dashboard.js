@@ -1,31 +1,22 @@
-import * as React from "react";
+import React from "react";
 import { styled, createTheme, ThemeProvider } from "@mui/material/styles";
-
+import CssBaseline from "@mui/material/CssBaseline";
 import MuiDrawer from "@mui/material/Drawer";
+import Box from "@mui/material/Box";
 import MuiAppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
-
-import { Menu, ChevronLeft } from "@mui/icons-material";
-import {
-  Badge,
-  Button,
-  Box,
-  Card,
-  CardActions,
-  CardContent,
-  CardMedia,
-  Container,
-  CssBaseline,
-  Divider,
-  Grid,
-  Icon,
-  IconButton,
-  List,
-  Link,
-  Paper,
-  Typography,
-} from "@material-ui";
-
+import List from "@mui/material/List";
+import Typography from "@mui/material/Typography";
+import Divider from "@mui/material/Divider";
+import IconButton from "@mui/material/IconButton";
+import Badge from "@mui/material/Badge";
+import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid";
+import Paper from "@mui/material/Paper";
+import Link from "@mui/material/Link";
+import MenuIcon from "@mui/icons-material/Menu";
+import ChevronLeft from "@mui/icons-material/ChevronLeft";
+import Notifications from "@mui/icons-material/Notifications";
 import { mainListItems, secondaryListItems } from "./listItems";
 
 import Chart from "./Chart";
@@ -43,7 +34,8 @@ const AppBar = styled(MuiAppBar, {
   zIndex: theme.zIndex.drawer + 1,
   height: "65px",
   marginTop: "65px",
-  paddingTop: "15px",
+
+  alignContent: "center",
 
   transition: theme.transitions.create(["width", "margin"], {
     easing: theme.transitions.easing.sharp,
@@ -63,7 +55,6 @@ const Drawer = styled(MuiDrawer, {
   shouldForwardProp: (prop) => prop !== "open",
 })(({ theme, open }) => ({
   "& .MuiDrawer-paper": {
-    // marginTop: "65px",
     position: "relative",
     whiteSpace: "nowrap",
     width: drawerWidth,
@@ -115,7 +106,7 @@ function DashboardContent() {
                   ...(open && { display: "none" }),
                 }}
               >
-                <Menu />
+                <MenuIcon />
               </IconButton>
               <img src={Root} height={35} width={35} />
               <Typography
@@ -163,13 +154,13 @@ function DashboardContent() {
             <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
               <Grid container spacing={4}>
                 {/* Donation Amounts Chart */}
-                <Grid item xs={12} md={12} lg={10}>
+                <Grid item xs={12} md={12} lg={12}>
                   <Paper
                     sx={{
                       p: 2,
                       display: "flex",
                       flexDirection: "row",
-                      height: 240,
+                      height: "auto",
                     }}
                   >
                     <Chart />
@@ -182,7 +173,7 @@ function DashboardContent() {
                       p: 2,
                       display: "flex",
                       flexDirection: "column",
-                      height: 240,
+                      height: "auto",
                     }}
                   >
                     <Donations />
@@ -195,7 +186,7 @@ function DashboardContent() {
                       p: 2,
                       display: "flex",
                       flexDirection: "row",
-                      height: "240",
+                      height: "auto",
                     }}
                   >
                     <Flowers />
@@ -207,7 +198,7 @@ function DashboardContent() {
                       p: 2,
                       display: "flex",
                       flexDirection: "row",
-                      height: "240",
+                      height: "auto",
                     }}
                   >
                     <Leafs />
@@ -219,7 +210,7 @@ function DashboardContent() {
                       p: 2,
                       display: "flex",
                       flexDirection: "row",
-                      height: "240",
+                      height: "auto",
                     }}
                   >
                     <Branch />

@@ -1,5 +1,5 @@
 import * as React from "react";
-import NavBar from "@mui/material/AppBar";
+import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
@@ -7,19 +7,15 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
+
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import Root from "../assets/images/root.png";
 
-const pages = [
-  "Home",
-  "About Us",
-  "Search Charities",
-  "Your Leafs",
-  "Contact Us",
-];
+import Root from "../assets/images/root.png";
+import { Link } from "react-router-dom";
+
+const pages = ["About Us", "Search Charities", "Your Leafs", "Contact Us"];
 const settings = ["Sign In", "Sign Up", "Logout", "Dashboard"];
 
 const ResponsiveAppBar = () => {
@@ -42,7 +38,7 @@ const ResponsiveAppBar = () => {
   };
 
   return (
-    <NavBar position="static" sx={{ height: "65px" }}>
+    <AppBar position="static" sx={{ height: "65px" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -87,13 +83,7 @@ const ResponsiveAppBar = () => {
               sx={{
                 display: { xs: "block", md: "none" },
               }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
+            ></Menu>
           </Box>
           <Typography
             variant="h6"
@@ -104,15 +94,30 @@ const ResponsiveAppBar = () => {
             Giving Tree
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                {page}
-              </Button>
-            ))}
+            <Button
+              onClick={handleCloseNavMenu}
+              sx={{ my: 2, color: "white", display: "block" }}
+            >
+              <Link to="/">
+                <Typography textAlign="center">About Us</Typography>
+              </Link>
+            </Button>
+            <Button
+              onClick={handleCloseNavMenu}
+              sx={{ my: 2, color: "white", display: "block" }}
+            >
+              <Link to="/components/questions">
+                <Typography textAlign="center">Search Charities</Typography>
+              </Link>
+            </Button>
+            <Button
+              onClick={handleCloseNavMenu}
+              sx={{ my: 2, color: "white", display: "block" }}
+            >
+              <Link to="/components/questions">
+                <Typography textAlign="center">Contact Us</Typography>
+              </Link>
+            </Button>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
@@ -137,16 +142,30 @@ const ResponsiveAppBar = () => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
+              <MenuItem onClick={handleCloseUserMenu}>
+                <Link to="/components/SignIn">
+                  <Typography textAlign="center">Sign In</Typography>
+                </Link>
+              </MenuItem>
+              <MenuItem onClick={handleCloseUserMenu}>
+                <Link to="/components/SignUp">
+                  <Typography textAlign="center">Sign Up</Typography>
+                </Link>
+              </MenuItem>
+              <MenuItem onClick={handleCloseUserMenu}>
+                <Typography textAlign="center">Logout</Typography>
+              </MenuItem>
+
+              <MenuItem onClick={handleCloseUserMenu}>
+                <Link to="/components/Dashboard">
+                  <Typography textAlign="center">Dashboard</Typography>
+                </Link>
+              </MenuItem>
             </Menu>
           </Box>
         </Toolbar>
       </Container>
-    </NavBar>
+    </AppBar>
   );
 };
 export default ResponsiveAppBar;

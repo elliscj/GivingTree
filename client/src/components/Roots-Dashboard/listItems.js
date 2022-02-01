@@ -1,15 +1,5 @@
 import * as React from "react";
-import {
-  Box,
-  Card,
-  CardActions,
-  CardContent,
-  CardMedia,
-  Button,
-  Typography,
-  Paper,
-  Icon,
-} from "@material-ui/core";
+
 import Flower from "../../assets/images/flower.png";
 import Branch from "../../assets/images/branch.png";
 import Leaf from "../../assets/images/leaf.png";
@@ -50,7 +40,6 @@ export const mainListItems = (
       <ListItemIcon>
         <img alt="Tax Docs icon" src={TaxDoc} height={35} width={35} />
       </ListItemIcon>
-
       <ListItemText primary="Tax Documents" />
     </ListItem>
     {/* profile list item */}
