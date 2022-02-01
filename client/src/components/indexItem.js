@@ -7,6 +7,7 @@ import { useState } from "react";
 import Auth from "../utils/auth";
 import nature from "../assets/images/Rnat.png";
 import Lnature from "../assets/images/Lnat.png";
+// import Card from "react-bootstrap/Card";
 
 const CharityIndexItem = ({ charity }) => {
   const tagline = charity.tagLine ? charity.tagLine : null;
@@ -49,6 +50,8 @@ const CharityIndexItem = ({ charity }) => {
 
   return (
     <div className="charity-item">
+      {/* <Card className="col-12 col-md-6 col-lg-3">
+        <Card.Body> */}
       <div>
         <h1>
           <div>
@@ -83,6 +86,8 @@ const CharityIndexItem = ({ charity }) => {
         <li>EIN: {charity.ein}</li>
         <li>Rating: {charity.currentRating.rating} / 4</li>
       </ul>
+      {/* </Card.Body>
+      </Card> */}
     </div>
   );
 };
