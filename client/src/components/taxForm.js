@@ -2,6 +2,7 @@
 // IRS docs on Charitable donations https://www.irs.gov/charities-non-profits/charitable-contributions
 // IRS docs on Charitable donations https://www.irs.gov/pub/irs-pdf/p526.pdf
 // Donation receipt 501c3 Eform https://eforms.com/receipt/donation/501c3/
+// GoogelDoc to 501c3 form https://eforms.com/download/2018/04/501c3-Donation-Receipt-Template.pdf
 
 import React from "react";
 import jsPDF from "jspdf";
