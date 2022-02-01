@@ -16,9 +16,6 @@ import MenuItem from "@mui/material/MenuItem";
 import Root from "../assets/images/root.png";
 import { Link } from "react-router-dom";
 
-const pages = ["About Us", "Search Charities", "Your Leafs", "Contact Us"];
-const settings = ["Sign In", "Sign Up", "Logout", "Dashboard"];
-
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);

@@ -55,6 +55,7 @@ const App = () => {
             {/* <Route exact path="/components/NavBar" component={NavBar} /> */}
             <Route exact path="/questions" component={Questions} />
             <Route exact path="/charityIndex" component={CharityIndex} />
+            <Route exact path="/Dashboard" component={Dashboard} />
           </Switch>
         </div>
       </Router>
