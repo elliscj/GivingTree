@@ -38,7 +38,7 @@ const ResponsiveAppBar = () => {
   return (
     <AppBar
       position="static"
-      sx={{ height: "65px", backgroundColor: "#5d6d47" }}
+      sx={{ height: "68px", backgroundColor: "#5d6d47" }}
       className="navbarcss"
     >
       <Container maxWidth="xl" className="navbarcss">
