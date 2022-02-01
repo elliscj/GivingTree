@@ -1,4 +1,6 @@
 import * as React from "react";
+import { useState } from "react";
+import { useMutation } from "@apollo/client";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -12,18 +14,46 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { LOGIN_USER } from "../utils/mutations/userMutations";
+import Auth from "../utils/auth";
+import Dashboard from "./Roots-Dashboard/Dashboard";
 
 const theme = createTheme();
 
-export default function SignIn() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    // eslint-disable-next-line no-console
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
+const SignIn = () => {
+  const [formState, setFormState] = useState({
+    email: "",
+    password: "",
+  });
+  const [login, { error, data }] = useMutation(LOGIN_USER);
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormState({
+      ...formState,
+      [name]: value,
     });
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const { data } = await login({
+        variables: { ...formState },
+      });
+
+      Auth.login(data.login.token);
+    } catch (error) {
+      console.log(error);
+    }
+
+    setFormState({
+      email: "",
+      password: "",
+    });
+
+    Dashboard();
   };
 
   return (
@@ -59,6 +89,8 @@ export default function SignIn() {
               name="email"
               autoComplete="email"
               autoFocus
+              value={formState.email}
+              onChange={handleChange}
             />
 
             <TextField
@@ -70,6 +102,8 @@ export default function SignIn() {
               type="password"
               id="password"
               autoComplete="current-password"
+              value={formState.password}
+              onChange={handleChange}
             />
 
             <Button
@@ -97,4 +131,6 @@ export default function SignIn() {
       </Container>
     </ThemeProvider>
   );
-}
+};
+
+export default SignIn;
