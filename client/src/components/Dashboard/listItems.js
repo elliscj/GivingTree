@@ -12,10 +12,14 @@ import ListItemText from "@mui/material/ListItemText";
 import ListSubheader from "@mui/material/ListSubheader";
 import { Link } from "@mui/material";
 import { color } from "@mui/system";
+import { useQuery } from "@apollo/client";
+import { QUERY_ME } from "../../utils/queries/queryUser";
 
 function preventDefault(event) {
   event.preventDefault();
 }
+
+//
 
 export const mainListItems = (
   <div>
@@ -70,6 +74,10 @@ export const mainListItems = (
 );
 
 export const secondaryListItems = (
+  // query favorites array in database
+
+  // map over each favorite and return list item button
+
   <div>
     <ListSubheader inset>Favorite Charities </ListSubheader>
     {/* sublist items. make array method to render list items for all favorited organizations in favorotes array */}
@@ -77,8 +85,11 @@ export const secondaryListItems = (
       <ListItemIcon>
         <img alt="leaf icon" src={Leaf} height={35} width={35} />
       </ListItemIcon>
-      <Link href="https://www.google.com/" target="_blank">
-        <ListItemText primary="Charity[1]" />
+      <Link
+        // href={`https://www.google.com/search?q=${charity_name}`}
+        target="_blank"
+      >
+        <ListItemText primary="CharityName" />
       </Link>
     </ListItem>
   </div>
