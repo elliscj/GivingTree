@@ -34,7 +34,7 @@ const AppBar = styled(MuiAppBar, {
 })(({ theme, open }) => ({
   zIndex: theme.zIndex.drawer + 1,
   height: "64px",
-  marginTop: "65px",
+  marginTop: "68px",
 
   alignContent: "center",
   backgroundColor: "#888577",
