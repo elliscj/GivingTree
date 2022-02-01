@@ -40,7 +40,6 @@ export const mainListItems = (
       <ListItemIcon>
         <img alt="Tax Docs icon" src={TaxDoc} height={35} width={35} />
       </ListItemIcon>
-
       <ListItemText primary="Tax Documents" />
     </ListItem>
     {/* profile list item */}
