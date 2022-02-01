@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { ADD_FAVORITE } from "../utils/mutations/userMutations";
 import IconButton from "@mui/material/IconButton";
 import { useMutation } from "@apollo/client";
@@ -16,7 +16,10 @@ const CharityIndexItem = ({ charity }) => {
     setFavorite(event.target.charityName);
     try {
       const { data } = await addFavorite({
-        variables: { _id: Auth.getProfile().data._id, favorite },
+        variables: {
+          $_id: Auth.getProfile().data._id,
+          $charity_name: favorite,
+        },
       });
     } catch (error) {
       console.error(error);
