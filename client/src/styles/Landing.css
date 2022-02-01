@@ -13,6 +13,7 @@ header {
   flex-direction: column;
   align-items: flex-start;
   height: 100vh;
+  color: #f1ebe2;
   /* background-image: linear-gradient(
     to bottom right,
     #ffffff,

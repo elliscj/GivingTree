@@ -32,13 +32,10 @@ const Landing = () => {
           <Link className="btn-green" to="/questions">
             <Typography>Get Started</Typography>
           </Link>
-        </Button>
-        <Button>
           <Link className="btn-green" to="/signin">
             <Typography>Sign in</Typography>
           </Link>
         </Button>
-
       </header>
     </div>
   );
