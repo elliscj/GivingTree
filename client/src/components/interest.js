@@ -1,5 +1,6 @@
 import React from "react";
-import CharityIndex from "./charityIndex";
+// import CharityIndex from "./charityIndex";
+import backgroundVideo from "../assets/lamp.mp4";
 
 const Interest = ({ handleSubmit, category, setCategory, setDisplay }) => {
   // const [category, setCategory] = React.useState("1");
@@ -15,6 +16,24 @@ const Interest = ({ handleSubmit, category, setCategory, setDisplay }) => {
 
   return (
     <div className="time-outer">
+      <video
+        autoPlay
+        muted
+        loop
+        id="myVideoCat"
+        style={{
+          position: "absolute",
+          top: "32%",
+          left: "50%",
+          width: "90%",
+          height: "35%",
+          // objectFit: "cover",
+          transform: "translate(-50%, -50%)",
+          // zIndex: 2,
+        }}
+      >
+        <source src={backgroundVideo} type="video/mp4" />
+      </video>
       <form className="time-outer-form">
         <label>
           <h3>What kind of work interests you?</h3>
