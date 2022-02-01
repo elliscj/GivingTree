@@ -1,18 +1,33 @@
 import * as React from "react";
-
+import { ADD_FAVORITE } from "../utils/mutations/userMutations";
 import IconButton from "@mui/material/IconButton";
-
+import { useMutation } from "@apollo/client";
+import { useState } from "react";
+import Auth from "../utils/auth";
 import nature from "../assets/images/Rnat.png";
 import Lnature from "../assets/images/Lnat.png";
 
 const CharityIndexItem = ({ charity }) => {
   const tagline = charity.tagLine ? charity.tagLine : null;
+  const [favorite, setFavorite] = useState("");
+  const [addFavorite, { error, data }] = useMutation(ADD_FAVORITE);
+  const handleFavorite = async (event) => {
+    event.preventDefault();
+    setFavorite(event.target.charityName);
+    try {
+      const { data } = await addFavorite({
+        variables: { _id: Auth.getProfile().data._id, favorite },
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  };
   return (
     <div className="charity-item">
       <div>
         <h1>
           <div>
-            <IconButton sx={{ p: 0 }}>
+            <IconButton onClick={handleFavorite} sx={{ p: 0 }}>
               <img src={Lnature} height={35} width={35} />
               <p>Add to Favorites</p>
               <img src={nature} height={35} width={35} />
