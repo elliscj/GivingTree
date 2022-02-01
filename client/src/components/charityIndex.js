@@ -4,6 +4,10 @@ import { Link } from "react-router-dom";
 // import { useState, useEffect } from "react";
 import CharityIndexItem from "./indexItem";
 import { BallTriangle } from "react-loader-spinner";
+// import Card from "react-bootstrap/Card";
+// import CardGroup from "react-bootstrap/Card";
+// import "bootstrap/dist/css/bootstrap.css";
+// import CardDeck from "react-bootstrap/CardDeck";
 
 // import Background from "../assets/images/Pngtree.png";
 
@@ -55,9 +59,13 @@ const CharityIndex = ({ charities }) => {
     >
       <h1>We found {charities.length} organizations matching your criteria</h1>
       <Link to="/">Back to Homepage</Link>
+      {/* <CardGroup>
+        <Card className="col-6 col-md-3 col-lg-3"> */}
       {charities.map((charity) => (
         <CharityIndexItem charity={charity} />
       ))}
+      {/* </Card>
+      </CardGroup> */}
     </div>
   ) : (
     <BallTriangle

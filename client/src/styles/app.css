@@ -256,14 +256,15 @@ button {
 .charity-item h1 {
   margin: 0px;
   text-align: center;
+  font-size: 30px;
   /* font-family: "Inconsolata", monospace; */
   font-weight: bold;
 }
 .charity-item h3 {
-  margin: 35px;
+  margin: 8px;
   text-align: center;
-  font-size: smaller;
-  font-weight: bold;
+  font-size: 12px;
+  /* font-weight: bold; */
 }
 
 a {
