@@ -1,35 +1,67 @@
 import React from "react";
+import {
+  ApolloClient,
+  createHttpLink,
+  InMemoryCache,
+  ApolloProvider,
+} from "@apollo/client";
 
 import "./App.css";
-import { BrowserRouter, HashRouter, Route, Switch } from "react-router-dom";
+import { setContext } from "@apollo/client/link/context";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import "./styles/app.css";
 
 import Landing from "./components/Landing";
 import Questions from "./components/questions";
 import CharityIndex from "./components/charityIndex";
+import SignUp from "./components/SignUp";
+import SignIn from "./components/SignIn";
 // import Roots from "./components/Roots-Dashboard/Roots";
 import ResponsiveAppBar from "./components/NavBar";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import Dashboard from "./components/Roots-Dashboard/Dashboard";
 
+const httpLink = createHttpLink({
+  uri: "/graphql",
+});
+
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem("id_token");
+
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : "",
+    },
+  };
+});
+
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
+
 const App = () => {
   return (
-    // <Roots />
-    <BrowserRouter>
-      <div>
-        {/* <Switch> */}
-        <Route path="/components/" component={ResponsiveAppBar} />
-        <Route exact path="/" component={Landing} />
-        <Route exact path="/components/questions" component={Questions} />
-        <Route exact path="/components/SignIn" component={SignIn} />
-        <Route exact path="/components/SignUp" component={SignUp} />
-        <Route exact path="/components/Dashboard" component={Dashboard} />
-        <Route exact path="/components/charityIndex" component={CharityIndex} />
-        {/* </Switch> */}
-      </div>
-    </BrowserRouter>
+    <ApolloProvider client={client}>
+      {/* <Roots /> */}
+      <Router basename="/">
+        <div>
+          <ResponsiveAppBar />
+          <Switch>
+            <Route exact path="/" component={Landing} />
+            <Route exact path="/signup" component={SignUp} />
+            <Route exact path="/signin" component={SignIn} />
+            {/* <Route exact path="/components/NavBar" component={NavBar} /> */}
+            <Route exact path="/questions" component={Questions} />
+            <Route exact path="/charityIndex" component={CharityIndex} />
+          </Switch>
+        </div>
+      </Router>
+    </ApolloProvider>
+
   );
 };
 
