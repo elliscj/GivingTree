@@ -10,37 +10,53 @@ import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import ListSubheader from "@mui/material/ListSubheader";
+import { Link } from "@mui/material";
+import { color } from "@mui/system";
+
+function preventDefault(event) {
+  event.preventDefault();
+}
 
 export const mainListItems = (
   <div>
     {/* Branches list item */}
-    <ListItem button>
+    {/* <ListItem button>
       <ListItemIcon>
         <img alt="branch icon" src={Branch} height={35} width={35} />
       </ListItemIcon>
       <ListItemText primary="Charity Groups" />
-    </ListItem>
+    </ListItem> */}
     {/* leaf list item */}
-    <ListItem button>
+    {/* <ListItem button>
       <ListItemIcon>
         <img alt="leaf icon" src={Leaf} height={35} width={35} />
       </ListItemIcon>
       <ListItemText primary="Charities" />
-    </ListItem>
+    </ListItem> */}
     {/* Flower list item */}
     <ListItem button>
       <ListItemIcon>
         <img alt="flower icon" src={Flower} height={35} width={35} />
       </ListItemIcon>
-
-      <ListItemText primary="Dontations" />
+      <Link
+        href="/donations"
+        style={{ textDecoration: "none", color: "black" }}
+      >
+        <ListItemText primary="Dontations" />
+      </Link>
     </ListItem>
     {/* Tax docs list item */}
     <ListItem button>
       <ListItemIcon>
         <img alt="Tax Docs icon" src={TaxDoc} height={35} width={35} />
       </ListItemIcon>
-      <ListItemText primary="Tax Documents" />
+      <Link
+        href="https://eforms.com/download/2018/04/501c3-Donation-Receipt-Template.pdf"
+        target="_blank"
+        style={{ textDecoration: "none", color: "black" }}
+      >
+        <ListItemText primary="Tax Documents" />
+      </Link>
     </ListItem>
     {/* profile list item */}
     <ListItem button>
@@ -55,18 +71,15 @@ export const mainListItems = (
 
 export const secondaryListItems = (
   <div>
-    <ListSubheader inset>Saved reports</ListSubheader>
+    <ListSubheader inset>Favorite Charities </ListSubheader>
+    {/* sublist items. make array method to render list items for all favorited organizations in favorotes array */}
     <ListItem button>
-      <ListItemIcon>{/* <Assignment /> */}</ListItemIcon>
-      <ListItemText primary="Current month" />
-    </ListItem>
-    <ListItem button>
-      <ListItemIcon>{/* <Assignment /> */}</ListItemIcon>
-      <ListItemText primary="Last quarter" />
-    </ListItem>
-    <ListItem button>
-      <ListItemIcon>{/* <Assignment /> */}</ListItemIcon>
-      <ListItemText primary="Year-end sale" />
+      <ListItemIcon>
+        <img alt="leaf icon" src={Leaf} height={35} width={35} />
+      </ListItemIcon>
+      <Link href="https://www.google.com/" target="_blank">
+        <ListItemText primary="Charity[1]" />
+      </Link>
     </ListItem>
   </div>
 );
