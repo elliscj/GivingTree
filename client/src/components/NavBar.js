@@ -15,13 +15,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Root from "../assets/images/root.png";
 import { Link } from "react-router-dom";
 
-const pages = [
-  "Home",
-  "About Us",
-  "Search Charities",
-  "Your Leafs",
-  "Contact Us",
-];
+const pages = ["About Us", "Search Charities", "Your Leafs", "Contact Us"];
 const settings = ["Sign In", "Sign Up", "Logout", "Dashboard"];
 
 const ResponsiveAppBar = () => {
@@ -89,13 +83,7 @@ const ResponsiveAppBar = () => {
               sx={{
                 display: { xs: "block", md: "none" },
               }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
+            ></Menu>
           </Box>
           <Typography
             variant="h6"
@@ -106,15 +94,30 @@ const ResponsiveAppBar = () => {
             Giving Tree
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                {page}
-              </Button>
-            ))}
+            <Button
+              onClick={handleCloseNavMenu}
+              sx={{ my: 2, color: "white", display: "block" }}
+            >
+              <Link to="/">
+                <Typography textAlign="center">About Us</Typography>
+              </Link>
+            </Button>
+            <Button
+              onClick={handleCloseNavMenu}
+              sx={{ my: 2, color: "white", display: "block" }}
+            >
+              <Link to="/components/questions">
+                <Typography textAlign="center">Search Charities</Typography>
+              </Link>
+            </Button>
+            <Button
+              onClick={handleCloseNavMenu}
+              sx={{ my: 2, color: "white", display: "block" }}
+            >
+              <Link to="/components/questions">
+                <Typography textAlign="center">Contact Us</Typography>
+              </Link>
+            </Button>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
