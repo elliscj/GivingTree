@@ -19,6 +19,7 @@ import ChevronLeft from "@mui/icons-material/ChevronLeft";
 import Notifications from "@mui/icons-material/Notifications";
 import { mainListItems, secondaryListItems } from "./listItems";
 
+import "../../styles/NavBar.css";
 import Chart from "./Chart";
 import Donations from "./Donations";
 import Root from "../../assets/images/root.png";
@@ -32,11 +33,11 @@ const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== "open",
 })(({ theme, open }) => ({
   zIndex: theme.zIndex.drawer + 1,
-  height: "65px",
+  height: "64px",
   marginTop: "65px",
 
   alignContent: "center",
-
+  backgroundColor: "#888577",
   transition: theme.transitions.create(["width", "margin"], {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
@@ -95,6 +96,7 @@ function DashboardContent() {
               sx={{
                 pr: "24px", // keep right padding when drawer closed
               }}
+              className="dashboardnavbar"
             >
               <IconButton
                 edge="start"
@@ -127,6 +129,7 @@ function DashboardContent() {
                 alignItems: "center",
                 justifyContent: "flex-end",
                 px: [1],
+                // backgroundColor: "#888577",
               }}
             >
               <IconButton onClick={toggleDrawer}>
