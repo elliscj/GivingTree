@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
 
 const secret = "imsuperstealthywithmysecretpasswordsipromise";
-const expiration = "1h";
+const expiration = Math.floor(Date.now() / 1000) + 60 * 60;
 
 module.exports = {
   authMiddleware: ({ req }) => {
@@ -14,13 +14,17 @@ module.exports = {
     if (!token) {
       return req;
     }
+    console.log(
+      `token:  ${token}, secret: ${secret} expiration: ${expiration}`
+    );
 
     try {
       const { data } = jwt.verify(token, secret, {
-        maxAge: expiration,
+        expiresIn: expiration,
       });
       req.user = data;
-    } catch {
+    } catch (error) {
+      console.error(error);
       console.log("Invalid Token");
     }
 

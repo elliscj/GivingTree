@@ -24,3 +24,7 @@ const donationSchema = new Schema({
 const Donation = model("Donation", donationSchema);
 
 module.exports = Donation;
+
+/* 
+check if there's a duplicate donation and address that issue
+*/
