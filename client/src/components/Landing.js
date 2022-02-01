@@ -27,7 +27,7 @@ const Landing = () => {
       <header className="landing">
         <h1 className="landing">Welcome to GivingTree!</h1>
 
-        <Link className="btn-green" to="/components/questions">
+        <Link className="btn-green" to="/questions">
           Get Started
         </Link>
       </header>
