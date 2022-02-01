@@ -16,7 +16,9 @@ import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { LOGIN_USER } from "../utils/mutations/userMutations";
 import Auth from "../utils/auth";
-import Dashboard from "./Roots-Dashboard/Dashboard";
+import Dashboard from "./Dashboard/Dashboard";
+
+import "../styles/SignUp.css";
 
 const theme = createTheme();
 
@@ -107,6 +109,8 @@ const SignIn = () => {
             />
 
             <Button
+              style={{ backgroundColor: "#5d6d47" }}
+              className="signUp-In-btn"
               type="submit"
               fullWidth
               variant="contained"
@@ -116,12 +120,10 @@ const SignIn = () => {
             </Button>
             <Grid container>
               <Grid item xs>
-                <Link href="#" variant="body2">
-                  Forgot password?
-                </Link>
+                <Link variant="body2">Forgot password?</Link>
               </Grid>
               <Grid item>
-                <Link href="#" variant="body2">
+                <Link href="/signup" variant="body2">
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>

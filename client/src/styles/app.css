@@ -40,6 +40,10 @@ h3 {
   font-family: "Open Sans Condensed", sans-serif;
 }
 
+.favorite {
+  color: #729e34;
+}
+
 @keyframes fadein {
   from {
     opacity: 0;

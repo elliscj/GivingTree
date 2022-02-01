@@ -32,7 +32,7 @@ const CharityIndexItem = ({ charity }) => {
           <div>
             <IconButton onClick={handleFavorite} sx={{ p: 0 }}>
               <img src={Lnature} height={35} width={35} />
-              <p>Add to Favorites</p>
+              <p className="favorite">Add to Favorites</p>
               <img src={nature} height={35} width={35} />
             </IconButton>
           </div>
