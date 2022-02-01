@@ -192,6 +192,13 @@ const ResponsiveAppBar = () => {
               </MenuItem>
             </Menu>
           </Box>
+
+          <Typography
+            style={{ paddingLeft: "25px", fontWeight: 700 }}
+            textAlign="right"
+          >
+            Current User
+          </Typography>
         </Toolbar>
       </Container>
     </AppBar>
