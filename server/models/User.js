@@ -27,7 +27,6 @@ const userSchema = new Schema({
       charity_name: {
         type: String,
         required: true,
-        unique: true,
       },
     },
   ],
@@ -47,6 +46,28 @@ userSchema.pre("save", async function (next) {
   next();
 });
 
+// userSchema.pre("findOneAndUpdate", async function (next) {
+
+// const currentUser = await this.model.findOne(this.getQuery());
+// // console.log(this.schema);
+// // console.log(this.favorites);
+// if (!this.getUpdate().$addToSet.favorites) {
+//   return next();
+// }
+// const newFav = this.getUpdate().$addToSet.favorites.charity_name;
+// const matchingFav = currentUser.favorites.find(({ charity_name }) => {
+//   return charity_name === newFav;
+// });
+// if (matchingFav === undefined) {
+//   return next();
+// } else {
+//   return next(currentUser.favorites);
+// }
+// // console.log(matchingFav);
+
+// // next();
+// });
+
 userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
@@ -54,3 +75,7 @@ userSchema.methods.isCorrectPassword = async function (password) {
 const User = model("User", userSchema);
 
 module.exports = User;
+
+/* 
+add charity url to favorite charities array
+*/
