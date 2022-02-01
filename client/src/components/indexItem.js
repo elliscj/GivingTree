@@ -46,7 +46,6 @@ const CharityIndexItem = ({ charity }) => {
         </h1>
         <h3>{charity.mission}</h3>
       </div>
-
       <ul>
         <li>Tagline: {tagline}</li>
         <li>

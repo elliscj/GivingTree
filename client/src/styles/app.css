@@ -167,6 +167,21 @@ h3 {
   align-items: center;
   padding-top: 20vw;
 }
+/* #ResultBG {
+  background-image: url(../assets/images/Pngtree.png);
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  opacity: 0.99;
+} */
 
 .curious > p {
   width: 50vw;
@@ -208,6 +223,7 @@ button {
   font-family: "Inconsolata", monospace;
   padding-bottom: 30px;
   font-size: 20px;
+  font-weight: bold;
 }
 
 .charity-item {
@@ -217,7 +233,7 @@ button {
   border: 1px solid black;
   border-radius: 10px;
   padding: 0px 30px 20px 30px;
-  background-color: rgb(207, 203, 203);
+  background-color: rgb(186, 231, 168);
   width: 50vw;
   margin-bottom: 12px;
 }

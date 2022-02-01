@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
-import { useState, useEffect } from "react";
+// import axios from "axios";
+// import { useState, useEffect } from "react";
 import CharityIndexItem from "./indexItem";
 import { BallTriangle } from "react-loader-spinner";
-import "../styles/app.css";
+
+// import Background from "../assets/images/Pngtree.png";
 
 const CharityIndex = ({ charities }) => {
   // const [indexItems, setIndex] = useState();
@@ -47,7 +48,11 @@ const CharityIndex = ({ charities }) => {
   //   );
 
   return charities ? (
-    <div className="index">
+    <div
+      id="ResultBG"
+      // styles={{ backgroundImage: `url(${Background})` }}
+      className="index"
+    >
       <h1>We found {charities.length} organizations matching your criteria</h1>
       <Link to="/">Back to Homepage</Link>
       {charities.map((charity) => (
