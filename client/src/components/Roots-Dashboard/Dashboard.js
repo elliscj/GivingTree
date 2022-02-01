@@ -106,9 +106,9 @@ function DashboardContent() {
                   ...(open && { display: "none" }),
                 }}
               >
-                <MenuIcon />
+                <img src={Root} height={35} width={35} />
               </IconButton>
-              <img src={Root} height={35} width={35} />
+
               <Typography
                 component="h1"
                 variant="h6"
