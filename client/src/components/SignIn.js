@@ -16,7 +16,7 @@ import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { LOGIN_USER } from "../utils/mutations/userMutations";
 import Auth from "../utils/auth";
-import Dashboard from "./Roots-Dashboard/Dashboard";
+import Dashboard from "./Dashboard/Dashboard";
 
 const theme = createTheme();
 
