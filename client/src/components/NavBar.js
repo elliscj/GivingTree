@@ -8,7 +8,7 @@ import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import "../styles/NavBar.css";
-
+import Auth from "../utils/auth";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
@@ -197,7 +197,9 @@ const ResponsiveAppBar = () => {
             style={{ paddingLeft: "25px", fontWeight: 700 }}
             textAlign="right"
           >
-            Current User
+            {Auth.getProfile()
+              ? Auth.getProfile().data.username
+              : "Not Signed In"}
           </Typography>
         </Toolbar>
       </Container>
