@@ -83,7 +83,32 @@ const ResponsiveAppBar = () => {
               sx={{
                 display: { xs: "block", md: "none" },
               }}
-            ></Menu>
+            >
+              <Button
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: "white", display: "block" }}
+              >
+                <Link to="/">
+                  <Typography textAlign="center">About Us</Typography>
+                </Link>
+              </Button>
+              <Button
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: "white", display: "block" }}
+              >
+                <Link to="/components/questions">
+                  <Typography textAlign="center">Search Charities</Typography>
+                </Link>
+              </Button>
+              <Button
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: "white", display: "block" }}
+              >
+                <Link to="/components/questions">
+                  <Typography textAlign="center">Contact Us</Typography>
+                </Link>
+              </Button>
+            </Menu>
           </Box>
           <Typography
             variant="h6"
