@@ -7,6 +7,7 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
+import "../styles/NavBar.css";
 
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
@@ -38,7 +39,7 @@ const ResponsiveAppBar = () => {
   };
 
   return (
-    <AppBar position="static" sx={{ height: "65px" }}>
+    <AppBar position="static" sx={{ height: "65px" }} className="navbarcss">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -96,7 +97,7 @@ const ResponsiveAppBar = () => {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
-                <Link to="/components/questions">
+                <Link to="/questions">
                   <Typography textAlign="center">Search Charities</Typography>
                 </Link>
               </Button>
@@ -104,7 +105,7 @@ const ResponsiveAppBar = () => {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
-                <Link to="/components/questions">
+                <Link to="/questions">
                   <Typography textAlign="center">Contact Us</Typography>
                 </Link>
               </Button>
@@ -131,7 +132,7 @@ const ResponsiveAppBar = () => {
               onClick={handleCloseNavMenu}
               sx={{ my: 2, color: "white", display: "block" }}
             >
-              <Link to="/components/questions">
+              <Link to="/questions">
                 <Typography textAlign="center">Search Charities</Typography>
               </Link>
             </Button>
@@ -139,7 +140,7 @@ const ResponsiveAppBar = () => {
               onClick={handleCloseNavMenu}
               sx={{ my: 2, color: "white", display: "block" }}
             >
-              <Link to="/components/questions">
+              <Link to="/questions">
                 <Typography textAlign="center">Contact Us</Typography>
               </Link>
             </Button>
@@ -168,12 +169,12 @@ const ResponsiveAppBar = () => {
               onClose={handleCloseUserMenu}
             >
               <MenuItem onClick={handleCloseUserMenu}>
-                <Link to="/components/SignIn">
+                <Link to="/SignIn">
                   <Typography textAlign="center">Sign In</Typography>
                 </Link>
               </MenuItem>
               <MenuItem onClick={handleCloseUserMenu}>
-                <Link to="/components/SignUp">
+                <Link to="/SignUp">
                   <Typography textAlign="center">Sign Up</Typography>
                 </Link>
               </MenuItem>
@@ -182,7 +183,7 @@ const ResponsiveAppBar = () => {
               </MenuItem>
 
               <MenuItem onClick={handleCloseUserMenu}>
-                <Link to="/components/Dashboard">
+                <Link to="/Dashboard">
                   <Typography textAlign="center">Dashboard</Typography>
                 </Link>
               </MenuItem>
