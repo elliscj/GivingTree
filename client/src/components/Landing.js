@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/Landing.css";
 import backgroundVideo from "../assets/landing1.mp4";
+import { Button, Typography } from "@mui/material";
 
 const Landing = () => {
   return (
@@ -26,10 +27,16 @@ const Landing = () => {
       </video>
       <header className="landing">
         <h1 className="landing">Welcome to GivingTree!</h1>
-
-        <Link className="btn-green" to="/components/questions">
-          Get Started
-        </Link>
+        <Button>
+          <Link className="btn-green" to="/components/questions">
+            <Typography>Get Started</Typography>
+          </Link>
+        </Button>
+        <Button>
+          <Link className="btn-green" to="/components/SignIn">
+            <Typography>Sign in</Typography>
+          </Link>
+        </Button>
       </header>
     </div>
   );
