@@ -1,16 +1,16 @@
 import * as React from "react";
 import { useTheme } from "@mui/material/styles";
-import { Paper, CssBaseline } from "@material-ui/core";
 import {
-  CartesianGrid,
   LineChart,
   Line,
   XAxis,
   YAxis,
   Label,
   ResponsiveContainer,
+  CartesianGrid,
 } from "recharts";
 import Title from "./Title";
+import { Container } from "@mui/material";
 
 // need to import donation data from database to display dynamically in chart
 
@@ -37,49 +37,51 @@ export default function Chart() {
   return (
     <>
       <Title>Your Donations</Title>
-      <LineChart
-        width={1000}
-        height={400}
-        data={data}
-        margin={{
-          top: 16,
-          right: 16,
-          bottom: 0,
-          left: 24,
-        }}
-      >
-        <XAxis
-          dataKey="time"
-          stroke={theme.palette.text.secondary}
-          style={theme.typography.body2}
-        />
-        <YAxis
-          stroke={theme.palette.text.secondary}
-          style={theme.typography.body2}
+      <ResponsiveContainer>
+        <LineChart
+          width={1000}
+          height={400}
+          data={data}
+          margin={{
+            top: 16,
+            right: 16,
+            bottom: 0,
+            left: 24,
+          }}
         >
-          <Label
-            angle={270}
-            position="left"
-            style={{
-              textAnchor: "middle",
-              fill: theme.palette.text.primary,
-              ...theme.typography.body1,
-            }}
+          <XAxis
+            dataKey="time"
+            stroke={theme.palette.text.secondary}
+            style={theme.typography.body2}
+          />
+          <YAxis
+            stroke={theme.palette.text.secondary}
+            style={theme.typography.body2}
           >
-            Donations ($)
-          </Label>
-        </YAxis>
-        <Line
-          isAnimationActive={true}
-          type="monotone"
-          dataKey="amount"
-          stroke="#00FF17"
-          dot={true}
-        />
-        <CartesianGrid stroke="#bbb" strokeDasharray="5 5" />
+            <Label
+              angle={270}
+              position="left"
+              style={{
+                textAnchor: "middle",
+                fill: theme.palette.text.primary,
+                ...theme.typography.body1,
+              }}
+            >
+              Donations ($)
+            </Label>
+          </YAxis>
+          <Line
+            isAnimationActive={true}
+            type="monotone"
+            dataKey="amount"
+            stroke="#00FF17"
+            dot={true}
+          />
+          <CartesianGrid stroke="#bbb" strokeDasharray="5 5" />
 
-        <Line type="monotone" dataKey="amout" stroke="#000000" />
-      </LineChart>
+          <Line type="monotone" dataKey="amout" stroke="#000000" />
+        </LineChart>
+      </ResponsiveContainer>
     </>
   );
 }

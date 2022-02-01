@@ -19,6 +19,9 @@ import SignUp from "./components/SignUp";
 import SignIn from "./components/SignIn";
 // import Roots from "./components/Roots-Dashboard/Roots";
 import ResponsiveAppBar from "./components/NavBar";
+import SignIn from "./components/SignIn";
+import SignUp from "./components/SignUp";
+import Dashboard from "./components/Roots-Dashboard/Dashboard";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -58,6 +61,7 @@ const App = () => {
         </div>
       </Router>
     </ApolloProvider>
+
   );
 };
 

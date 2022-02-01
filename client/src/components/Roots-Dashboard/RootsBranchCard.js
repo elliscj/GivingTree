@@ -1,42 +1,30 @@
 import * as React from "react";
-import {
-  Box,
-  Card,
-  CardActions,
-  CardContent,
-  CardMedia,
-  Button,
-  Typography,
-  Paper,
-} from "@material-ui/core";
-import Title from "./Title";
-import Branch from "../../assets/images/branch.png";
-import "../../styles/Roots.css";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 
 export default function BranchCard() {
   return (
-    <>
-      <Card xs={{ maxWidth: 345 }} className="rootcard">
-        {/* <CardMedia
-            className="icons"
-            component="img"
-            image={Branch}
-            alt="flower icon"
-          /> */}
-        <CardContent>
-          <Title gutterBottom variant="h5" component="div">
-            Your Branches
-          </Title>
-          <Typography variant="body1" color="text.secondary">
-            Branches represent your Organization Groups
-          </Typography>
-        </CardContent>
-        <CardActions>
-          <Button className="cardButtons" size="large">
-            View All Branches
-          </Button>
-        </CardActions>
-      </Card>
-    </>
+    <Card sx={{ maxWidth: 345 }}>
+      {/* <CardMedia
+        component="img"
+        alt="green iguana"
+        height="140"
+        image="/static/images/cards/contemplative-reptile.jpg"
+      /> */}
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          Branches
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          Branches are your groups of Organizations that you favorited
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button size="large">View Branches</Button>
+      </CardActions>
+    </Card>
   );
 }

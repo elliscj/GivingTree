@@ -1,41 +1,31 @@
 import * as React from "react";
-import {
-  Paper,
-  Box,
-  Card,
-  CardActions,
-  CardContent,
-  CardMedia,
-  Button,
-  Typography,
-} from "@material-ui/core";
-import Leaf from "../../assets/images/leaf.png";
-import "../../styles/Roots.css";
-import Title from "./Title";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+
 export default function LeafCard() {
   return (
-    <>
-      <Card xs={{ maxWidth: 345 }} className="rootcard">
-        {/* <CardMedia
-            className="icons"
-            component="img"
-            image={Leaf}
-            alt="flower icon"
-          /> */}
-        <CardContent>
-          <Title gutterBottom variant="h5" component="div">
-            Your Leafs
-          </Title>
-          <Typography variant="body1" color="text.secondary">
-            Leafs represent your Favorite Organizations
-          </Typography>
-        </CardContent>
-        <CardActions>
-          <Button className="cardButtons" size="large">
-            View All Leafs
-          </Button>
-        </CardActions>
-      </Card>
-    </>
+    <Card sx={{ maxWidth: 345 }}>
+      {/* <CardMedia
+        component="img"
+        alt="green iguana"
+        height="140"
+        image="/static/images/cards/contemplative-reptile.jpg"
+      /> */}
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          Leafs
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          Leafs represent your favorite Organizations which you favorited.
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button size="large">View Leafs</Button>
+      </CardActions>
+    </Card>
   );
 }
