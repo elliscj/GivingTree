@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 
 import Flower from "../../assets/images/flower.png";
 import Branch from "../../assets/images/branch.png";
@@ -12,16 +12,12 @@ import ListItemText from "@mui/material/ListItemText";
 import ListSubheader from "@mui/material/ListSubheader";
 import { Link } from "@mui/material";
 import { color } from "@mui/system";
+
 import { useQuery } from "@apollo/client";
-import { QUERY_ME } from "../../utils/queries/queryUser";
+import { QUERY_USER } from "../../utils/queries/queryUser";
+import Auth from "../../utils/auth";
 
-function preventDefault(event) {
-  event.preventDefault();
-}
-
-//
-
-export const mainListItems = (
+const mainListItems = (
   <div>
     {/* Branches list item */}
     {/* <ListItem button>
@@ -73,24 +69,56 @@ export const mainListItems = (
   </div>
 );
 
-export const secondaryListItems = (
-  // query favorites array in database
+export default mainListItems;
 
-  // map over each favorite and return list item button
+// export const SecondaryListItems = () => {
+//   // query favorites array in database
 
-  <div>
-    <ListSubheader inset>Favorite Charities </ListSubheader>
-    {/* sublist items. make array method to render list items for all favorited organizations in favorotes array */}
-    <ListItem button>
-      <ListItemIcon>
-        <img alt="leaf icon" src={Leaf} height={35} width={35} />
-      </ListItemIcon>
-      <Link
-        // href={`https://www.google.com/search?q=${charity_name}`}
-        target="_blank"
-      >
-        <ListItemText primary="CharityName" />
-      </Link>
-    </ListItem>
-  </div>
-);
+//   // map over each favorite and return list item button
+
+//   let [queryUser, { error, data }] = useQuery(QUERY_USER);
+
+//   if (error) {
+//     console.log(JSON.stringify(error));
+//   }
+
+//   const listFavorites = async () => {
+//     console.log(Auth.getProfile().data);
+
+//     try {
+//       const { data } = await queryUser({
+//         variables: {
+//           username: Auth.getProfile().data.username,
+//         },
+//       });
+//       console.log(data);
+//     } catch (err) {
+//       console.error(err);
+//     }
+//   };
+//   useEffect(() => {
+//     console.log(`Welcome to the useEffect!`);
+//     listFavorites();
+//   });
+//   // console.log(Auth.getProfile().data);
+//   // const listFavorites = Auth.getProfile().data.favorites;
+
+//   return (
+//     <div>
+//       <ListSubheader inset>Favorite Charities </ListSubheader>
+//       {/* sublist items. make array method to render list items for all favorited organizations in favorotes array */}
+
+//       <ListItem button>
+//         <ListItemIcon>
+//           <img alt="leaf icon" src={Leaf} height={35} width={35} />
+//         </ListItemIcon>
+//         <Link
+//           // href={`https://www.google.com/search?q=${charity_name}`}
+//           target="_blank"
+//         >
+//           <ListItemText primary="CharityName" />
+//         </Link>
+//       </ListItem>
+//     </div>
+//   );
+// };
