@@ -192,7 +192,7 @@ const ResponsiveAppBar = () => {
               </MenuItem>
             </Menu>
           </Box>
-
+          {/* 
           <Typography
             style={{ paddingLeft: "25px", fontWeight: 700 }}
             textAlign="right"
@@ -200,7 +200,7 @@ const ResponsiveAppBar = () => {
             {Auth.getProfile()
               ? Auth.getProfile().data.username
               : "Not Signed In"}
-          </Typography>
+          </Typography> */}
         </Toolbar>
       </Container>
     </AppBar>
