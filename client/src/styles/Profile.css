@@ -2,7 +2,31 @@
   height: 50px;
   width: 50px;
 }
+.gitIcon {
+  height: 35px;
+  width: 35px;
+}
 
 .changebtns {
   color: #5d6d47;
+}
+
+.contactcards {
+  text-align: center;
+  justify-content: space-between;
+  padding-right: 10px;
+}
+.ccgrid {
+  margin: 15px;
+}
+
+.cuheader {
+  font-size: 60px;
+  color: #5d6d47;
+}
+
+.cardIcons {
+  text-align: center;
+  justify-content: center;
+  padding: 15px;
 }
