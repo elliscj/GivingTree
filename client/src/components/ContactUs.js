@@ -27,7 +27,7 @@ const Contributors = [
     linkedIn: "https://www.linkedin.com/in/jason-lutz-a0710a191/",
   },
   {
-    name: "Aaron Ferrel",
+    name: "Aaron Farrell",
     githubName: "afarr002",
     githubLink: "https://github.com/afarr002",
     email: "afarrell002@gmail.com",
