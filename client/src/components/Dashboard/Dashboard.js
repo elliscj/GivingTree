@@ -17,7 +17,8 @@ import Link from "@mui/material/Link";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeft from "@mui/icons-material/ChevronLeft";
 import Notifications from "@mui/icons-material/Notifications";
-import { mainListItems, secondaryListItems } from "./listItems";
+import mainListItems from "./listItems";
+import SecondaryListItems from "./SecondaryListItems";
 
 import "../../styles/NavBar.css";
 import Chart from "./Chart";
@@ -139,7 +140,9 @@ function DashboardContent() {
             <Divider />
             <List>{mainListItems}</List>
             <Divider />
-            <List>{secondaryListItems}</List>
+            <List>
+              <SecondaryListItems />
+            </List>
           </Drawer>
           {/* Cards displayed to right of tool box  */}
           <Box
