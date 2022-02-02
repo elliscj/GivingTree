@@ -23,35 +23,35 @@ const Contributors = [
     name: "Jason Lutz",
     githubName: "LutzJason92",
     githubLink: "https://github.com/LutzJason92",
-    email: "",
+    email: "LutzJason92@gmail.com",
     linkedIn: "",
   },
   {
     name: "Aaron Ferrel",
     githubName: "afarr002",
     githubLink: "https://github.com/afarr002",
-    email: "",
-    linkedIn: "",
+    email: "afarrell002@gmail.com",
+    linkedIn: "https://www.linkedin.com/in/aaron-farrell-1a7101219/",
   },
   {
     name: "William Barton",
     githubName: "wwbarton",
     githubLink: "https://github.com/wwbarton",
-    email: "",
-    linkedIn: "",
+    email: "wwalt.barton@gmail.com",
+    linkedIn: "https://www.linkedin.com/in/william-barton-140248222/",
   },
   {
     name: "Cameron Ellis",
     githubName: "elliscj",
     githubLink: "https://github.com/elliscj",
-    email: "",
-    linkedIn: "",
+    email: "elliscj@colorado.edu",
+    linkedIn: "https://www.linkedin.com/in/cameronje/",
   },
   {
     name: "Mohamed Essmat",
     githubName: "MohEssmat",
     githubLink: "https://github.com/MohEssmat",
-    email: "",
+    email: "mohamedessmat80@gmail.com",
     linkedIn: "",
   },
 ];
@@ -84,16 +84,11 @@ export default function ContactCard() {
 
                   <Divider />
 
-                  <Typography variant="h6" component="div">
-                    {email}
-                  </Typography>
-                  <Divider />
-
                   <CardActions className="cardIcons">
                     <Link href={githubLink} target="_blank">
                       <img src={GitHub} alt="github icon" className="gitIcon" />
                     </Link>
-                    <Link href={email} target="_blank">
+                    <Link href={`mailto: ${email}`} target="_blank">
                       <img
                         src={EmailIcon}
                         alt="email icon"
