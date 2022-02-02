@@ -59,8 +59,15 @@ const Contributors = [
 export default function ContactCard() {
   return (
     <>
-      <Paper sx={{ textAlign: "center" }}>
-        <Typography variant="h3" className="cuheader">
+      <Paper sx={{ justifyContent: "center" }}>
+        <Typography
+          variant="h3"
+          className="cuheader"
+          sx={{
+            textAlign: "center",
+            margin: "auto",
+          }}
+        >
           GivingTree Developers
         </Typography>
       </Paper>
@@ -76,41 +83,35 @@ export default function ContactCard() {
             height: "auto",
           }}
         >
-          {Contributors.map(
-            ({ name, email, githubName, githubLink, linkedIn }) => (
-              <Card sx={{ minWidth: "200px" }} className="contactcards">
-                <CardContent sx={{ justifyText: "center" }}>
-                  <Title variant="h6">{name}</Title>
+          {Contributors.map(({ name, email, githubLink, linkedIn }) => (
+            <Card sx={{ minWidth: "200px" }} className="contactcards">
+              <CardContent sx={{ justifyText: "center" }}>
+                <Title variant="h6">{name}</Title>
 
-                  <Divider />
+                <Divider />
 
-                  <CardActions className="cardIcons">
-                    <Link href={githubLink} target="_blank">
-                      <img src={GitHub} alt="github icon" className="gitIcon" />
-                    </Link>
-                    <Link href={`mailto: ${email}`} target="_blank">
-                      <img
-                        src={EmailIcon}
-                        alt="email icon"
-                        className="gitIcon"
-                      />
-                    </Link>
-                    <Link href={linkedIn} target="_blank">
-                      <img
-                        src={LinkedIcon}
-                        alt="linkedin icon"
-                        className="gitIcon"
-                      />
-                    </Link>
-                  </CardActions>
-                </CardContent>
-              </Card>
-            )
-          )}
+                <CardActions className="cardIcons">
+                  <Link href={githubLink} target="_blank">
+                    <img src={GitHub} alt="github icon" className="gitIcon" />
+                  </Link>
+                  <Link href={`mailto: ${email}`} target="_blank">
+                    <img src={EmailIcon} alt="email icon" className="gitIcon" />
+                  </Link>
+                  <Link href={linkedIn} target="_blank">
+                    <img
+                      src={LinkedIcon}
+                      alt="linkedin icon"
+                      className="gitIcon"
+                    />
+                  </Link>
+                </CardActions>
+              </CardContent>
+            </Card>
+          ))}
         </Grid>
       </Grid>
 
-      <Paper>iwufhwifUHwiruvh</Paper>
+      {/* <Paper>iwufhwifUHwiruvh</Paper> */}
     </>
   );
 }
