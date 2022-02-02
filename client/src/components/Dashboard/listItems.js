@@ -63,8 +63,9 @@ const mainListItems = (
       <ListItemIcon>
         <img alt="profile icon" src={Profile} height={35} width={35} />
       </ListItemIcon>
-
-      <ListItemText primary="Profile" />
+      <Link href="/profile" style={{ textDecoration: "none", color: "black" }}>
+        <ListItemText primary="Profile" />
+      </Link>
     </ListItem>
   </div>
 );

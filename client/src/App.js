@@ -58,7 +58,7 @@ const App = () => {
             {/* <Route exact path="/components/NavBar" component={NavBar} /> */}
             <Route exact path="/questions" component={Questions} />
             <Route exact path="/charityIndex" component={CharityIndex} />
-            <Route exact path="/Dashboard" component={Dashboard} />
+            <Route exact path="/dashboard" component={Dashboard} />
             <Route exact path="/donations" component={Donations} />
             <Route exact path="/profile" component={ProfileCard} />
             <Route exact path="/contactus" component={ContactUs} />
