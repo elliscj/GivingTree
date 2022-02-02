@@ -24,7 +24,7 @@ const Contributors = [
     githubName: "LutzJason92",
     githubLink: "https://github.com/LutzJason92",
     email: "LutzJason92@gmail.com",
-    linkedIn: "",
+    linkedIn: "https://www.linkedin.com/in/jason-lutz-a0710a191/",
   },
   {
     name: "Aaron Ferrel",
@@ -52,7 +52,7 @@ const Contributors = [
     githubName: "MohEssmat",
     githubLink: "https://github.com/MohEssmat",
     email: "mohamedessmat80@gmail.com",
-    linkedIn: "",
+    linkedIn: "https://www.linkedin.com/in/mohamed-essmat-0b771123/",
   },
 ];
 
