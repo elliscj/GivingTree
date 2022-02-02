@@ -23,6 +23,8 @@
 .cuheader {
   font-size: 60px;
   color: #5d6d47;
+  text-align: center;
+  align-content: center;
 }
 
 .cardIcons {
