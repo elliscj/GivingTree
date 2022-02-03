@@ -1,6 +1,6 @@
 # GivingTree
 
-GivingTree application is -------------------
+GivingTree application is that allows for charitable location search by location and special interests. Website links, mission statements, full address an charity names are returned from query with added charity favoriting functionality included for view on user's signed in profile view.
 
 ## Key Technologies used
 
@@ -16,19 +16,31 @@ GivingTree application is -------------------
 - Git
 - GitHub
 
-![GivingTree](assets/images/main.png)
+![GivingTree](assets\images\main.PNG)
 
-![GivingTree](assets/images/location.png)
+![GivingTree](assets\images\location.PNG)
 
-![GivingTree](assets/images/interests.png)
+![GivingTree](assets\images\interests.PNG)
 
 ## User Story
 
--?????????????
+User Story -​
 
-![GivingTree](assets/images/results.png)
+​
 
-![GivingTree](assets/images/dashboard.png)
+Many of us live busy lives, enough so that it may not give us enough time to be proper stewards of our community or the world. This is the purpose of this application- to make it easy and efficient to find organizations, either locally or nationally, and research their causes and responsibly donate to them. ​
+
+​
+
+There is also the function of favoriting the charitable organizations that you'd like to remember for the future, and in turn access them whenever you'd like.​
+
+​
+
+But it shouldn't end there- certain charitable organizations are also approved by the IRS so that your contributions can carry over as a form of taxable returns or deductions. This application provides the proper forms to ensure such authorization can be met.
+
+![GivingTree](assets\images\results.PNG)
+
+![GivingTree](assets\images\dashboard.PNG)
 
 ## Installation & Usage
 
