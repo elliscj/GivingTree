@@ -38,9 +38,9 @@ There is also the function of favoriting the charitable organizations that you'd
 
 But it shouldn't end there- certain charitable organizations are also approved by the IRS so that your contributions can carry over as a form of taxable returns or deductions. This application provides the proper forms to ensure such authorization can be met.
 
-![GivingTree](./assets\images\results.PNG)
+![GivingTree](./assets/images/results.PNG)
 
-![GivingTree](./assets\images\dashboard.PNG)
+![GivingTree](./assets/images/dashboard.PNG)
 
 ## Installation & Usage
 
